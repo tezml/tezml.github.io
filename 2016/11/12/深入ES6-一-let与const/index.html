@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tezml.Blog</title>
+  <title>深入ES6(一) let与const | Tezml.Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tezml.Blog">
-<meta property="og:url" content="https://tezml.github.io/index.html">
+  <meta name="description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入ES6(一) let与const">
+<meta property="og:url" content="https://tezml.github.io/2016/11/12/深入ES6-一-let与const/index.html">
 <meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
 <meta property="og:locale" content="zn-CN">
+<meta property="og:updated_time" content="2017-09-11T10:57:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tezml.Blog">
+<meta name="twitter:title" content="深入ES6(一) let与const">
+<meta name="twitter:description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
   
     <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-深入ES6-一-let与const" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-深入ES6-一-let与const" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/12/深入ES6-一-let与const/" class="article-date">
   <time datetime="2016-11-12T10:09:30.000Z" itemprop="datePublished">2016-11-12</time>
@@ -79,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/12/深入ES6-一-let与const/">深入ES6(一) let与const</a>
+    <h1 class="article-title" itemprop="name">
+      深入ES6(一) let与const
     </h1>
   
 
@@ -130,110 +132,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-细讲encodeURI和encodeURIComponent以及escape的区别与应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" class="article-date">
-  <time datetime="2015-07-12T10:00:05.000Z" itemprop="datePublished">2015-07-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/">细讲encodeURI和encodeURIComponent以及escape的区别与应用</a>
-    </h1>
+    <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">细讲encodeURI和encodeURIComponent以及escape的区别与应用</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，我们都知道这三个东西都是用来编码的</p>
-<p>先来说encodeURI()和encodeURIComponent()</p>
-<p>这两个是在转换url时候用来编码解码用的。</p>
-<p>有编码就会有解码，解码就是decodeURI()和decodeURIComponent()</p>
-<p>他们的用法很简单，在参数中带入要转码的文字就可实现目的</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">encodeURI</span>(<span class="string">"我是要编码的文字"</span>)</div><div class="line"><span class="built_in">decodeURI</span>(<span class="string">"我是要解码的文字"</span>)</div><div class="line"><span class="built_in">encodeURIComponent</span>(<span class="string">"我是要编码的文字"</span>)</div><div class="line"><span class="built_in">decodeURIComponent</span>(<span class="string">"我是要解码的文字"</span>)</div></pre></td></tr></table></figure>
-<p>而encodeURI()和encodeURIComponent()的区别其实并不大<br>主要区别在于：</p>
-<font color="blue"><br>encodeURI不编码字符有82个：!，#，$，&amp;，’，(，)，，+，,，-，.，/，:，;，=，?，@，<em>，~，0-9，a-z，A-Z<br>encodeURIComponent不编码字符有71个：!， ‘，(，)，，-，.，</em>，~，0-9，a-z，A-Z<br></font>
-
-<hr>
-<p>encodeURI主要用于直接赋值给地址栏时候：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=<span class="built_in">encodeURI</span>(<span class="string">"http://www.cnblogs.com/Tezml/"</span>);</div></pre></td></tr></table></figure></p>
-<p>而encodeURIComponent主要用于url的query参数:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=<span class="string">"http://www.cnblogs.com/Tezml/test.php?a="</span>+<span class="built_in">encodeURIComponent</span>(<span class="string">"我就是我"</span>);</div></pre></td></tr></table></figure></p>
-<hr>
-<p>而escape，相比于上面那两个，就有所不同了</p>
-<p>escape()是编码，unescape()是解码；</p>
-<p>escape 方法:</p>
-<p>对 String 对象编码以便它们能在所有计算机上可读，</p>
-<p>escape(charString)</p>
-<p>必选项 charstring 参数是要编码的任意 String 对象或文字。</p>
-<p>说明 :<br>escape 方法返回一个包含了 charstring 内容的字符串值（ Unicode 格式）。所有空格、标点、重音符号以及其他非 ASCII 字符都用 %xx 编码代替，<br>其中 xx 等于表示该字符的十六进制数。例如，空格返回的是 “%20” 。<br>字符值大于 255 的以 %uxxxx 格式存储。<br>escape不编码字符有69个：*，+，-，.，/，@，_，0-9，a-z，A-Z</p>
-<font color="blue">注意 escape 方法不能够用来对统一资源标示码 (URI) 进行编码。对其编码应使用 encodeURI 和encodeURIComponent 方法。</font>
-
-<hr>
-<p>##最后上一段关于编码解码的demo</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"> &lt;head&gt;</div><div class="line">  &lt;title&gt;Tezml_编码解码测试&lt;<span class="regexp">/title&gt;</span></div><div class="line"><span class="regexp">  &lt;meta charset="utf-8"&gt;</span></div><div class="line"><span class="regexp">  &lt;meta name="author" content="Tezml" /</span>&gt;</div><div class="line">  &lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"Tezml"</span> /&gt;</div><div class="line">  &lt;meta name=<span class="string">"description"</span> content=<span class="string">"Tezml"</span> /&gt;</div><div class="line">  &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;<span class="regexp">/head&gt;</span></div><div class="line"><span class="regexp">&lt;body&gt;</span></div><div class="line"><span class="regexp">&lt;div id="wz1"&gt;&lt;/</span>div&gt;</div><div class="line">&lt;div id=<span class="string">"wz2"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz3"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz4"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz5"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz6"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz7"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz8"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz9"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz10"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz11"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz12"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/body&gt;</span></div><div class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></div><div class="line"><span class="string">var chinese="</span>请叫我中文<span class="string">"</span></div><div class="line"><span class="string">var english="</span>place tall me englash<span class="string">"</span></div><div class="line">var Monster=":#&amp;$/@"</div><div class="line">$(<span class="string">"#wz1"</span>).html(<span class="built_in">encodeURI</span>(chinese))<span class="comment">//编码 %E8%AF%B7%E5%8F%AB%E6%88%91%E4%B8%AD%E6%96%87</span></div><div class="line">$(<span class="string">"#wz2"</span>).html(<span class="built_in">decodeURI</span>(chinese))<span class="comment">//解码 请叫我中文</span></div><div class="line">$(<span class="string">"#wz3"</span>).html(<span class="built_in">encodeURI</span>(english))<span class="comment">//编码 place%20tall%20me%20englash</span></div><div class="line">$(<span class="string">"#wz4"</span>).html(<span class="built_in">decodeURI</span>(english))<span class="comment">//解码 place tall me englash</span></div><div class="line">$(<span class="string">"#wz5"</span>).html(<span class="built_in">encodeURIComponent</span>(Monster))<span class="comment">//编码 %3A%23%26%24%2F%40</span></div><div class="line">$(<span class="string">"#wz6"</span>).html(<span class="built_in">encodeURI</span>(Monster))<span class="comment">//编码 :#&amp;$/@</span></div><div class="line">$(<span class="string">"#wz7"</span>).html(<span class="built_in">escape</span>(chinese))<span class="comment">//编码 %u8BF7%u53EB%u6211%u4E2D%u6587</span></div><div class="line">$(<span class="string">"#wz8"</span>).html(<span class="built_in">escape</span>(english))<span class="comment">//编码 place%20tall%20me%20englash</span></div><div class="line">$(<span class="string">"#wz9"</span>).html(<span class="built_in">escape</span>(Monster))<span class="comment">//编码 %3A%23%26%24/@</span></div><div class="line">$(<span class="string">"#wz10"</span>).html(<span class="built_in">unescape</span>(chinese))<span class="comment">//编码 请叫我中文</span></div><div class="line">$(<span class="string">"#wz11"</span>).html(<span class="built_in">unescape</span>(english))<span class="comment">//编码 place tall me englash</span></div><div class="line">$(<span class="string">"#wz12"</span>).html(<span class="built_in">unescape</span>(Monster))<span class="comment">//编码 :#&amp;$/@</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>html&gt;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" data-id="cj7g23jzi0002dt7g05xlgiiv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-也算新的开始吧！" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/11/也算新的开始吧！/" class="article-date">
-  <time datetime="2015-06-11T09:56:47.000Z" itemprop="datePublished">2015-06-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/11/也算新的开始吧！/">“也算新的开始吧！&#34;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##换家啦!</p>
-<p>因为换了手机号,之前博客园的密码都忘了也找不回来了,对于我而言,一天不写博客我简直浑身难受呢!(哈哈,开个玩笑)。<br>所以一直想找一个能写博客的地方,像传统博客这种我确实不太喜欢。而workpress这种我又很讨厌,之前自己用node加自己设计的页面做了一个博客系统,但是阿里云坑爹的服务器老被盗,我也表示日了狗了。用了俩月就放弃了,看看了github的hexo还不错,而且可以自定义一些皮肤,还可以绑定自己的域名。所以我就入坑啦O(∩_∩)O</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/06/11/也算新的开始吧！/" data-id="cj7g23jzf0001dt7guslvtvmj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
