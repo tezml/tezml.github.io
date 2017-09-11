@@ -318,122 +318,31 @@
           
             <p>##let命令</p>
 <p>###基本用法<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
-<pre><code class="javascript">{
-   var a =1;
-   let b =2;
-   console.log(b);//2
- }
-   console.log(a);//1
-   console.log(b);//b is not defined
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="keyword">var</span> a =<span class="number">1</span>;</div><div class="line">   <span class="keyword">let</span> b =<span class="number">2</span>;</div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">   <span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//b is not defined</span></div></pre></td></tr></table></figure>
 <hr>
-<p>用let做循环处理就会比较方便,不会使i作用于外面。</p>
-<pre><code class="javascript">for (let i = 0; i &lt; 10; i++) {
-}
-console.log(i);//i is not defined
-</code></pre>
-<pre><code class="javascript">for (var i = 0; i &lt; 10; i++) {
-
-}
-console.log(i)//10
-</code></pre>
+<p>用let做循环处理就会比较方便,不会使i作用于外面。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i);<span class="comment">//i is not defined</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i)<span class="comment">//10</span></div></pre></td></tr></table></figure>
 <p>用let时,因为变量是作用于遍历块内的,所以取过来的值是即时的,而var声明的是全局变量,调用时全局变量已经走完循环变成了10</p>
-<pre><code class="javascript">let a =[];
-for (let i = 0; i &lt; 10; i++) {
-    a[i]=function(){
-        console.log(i)
-    }
-}
-a[6]()//6
-let b =[];
-for (var i = 0; i &lt; 10; i++) {
-    b[i]=function(){
-        console.log(i)
-    }
-}
-b[6]()//10
-</code></pre>
-<p>let 不能创建名字一样的变量,如果变量名一样会报错</p>
-<pre><code class="javascript">let i = 1;
-let i = 2;
-console.log(i)//Identifier &#39;i&#39; has already been declared
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a =[];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    a[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]()<span class="comment">//6</span></div><div class="line"><span class="keyword">let</span> b =[];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    b[i]=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">b[<span class="number">6</span>]()<span class="comment">//10</span></div></pre></td></tr></table></figure>
+<p>let 不能创建名字一样的变量,如果变量名一样会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> i = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> i = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(i)<span class="comment">//Identifier 'i' has already been declared</span></div></pre></td></tr></table></figure></p>
 <p>let和var的报错提示也是不一样的</p>
-<pre><code class="javascript">console.log(bar)//bar is not defined
-let bar;
-console.log(tar)//undefined
-var tar
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(bar)<span class="comment">//bar is not defined</span></div><div class="line"><span class="keyword">let</span> bar;</div><div class="line"><span class="built_in">console</span>.log(tar)<span class="comment">//undefined</span></div><div class="line"><span class="keyword">var</span> tar</div></pre></td></tr></table></figure>
 <p>只要有let的存在,那么这个变量只存在于该作用域内</p>
-<pre><code class="javascript">var tmp = 123;
-if (true) {
-   tmp = &#39;abc&#39;; // let&amp;const.html:64 Uncaught ReferenceError: tmp is not defined
-   let tmp =&quot;123&quot;;
-}
-if (true) {
-   tmp = &#39;abc&#39;; //abc
-}
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">   tmp = <span class="string">'abc'</span>; <span class="comment">// let&amp;const.html:64 Uncaught ReferenceError: tmp is not defined</span></div><div class="line">   <span class="keyword">let</span> tmp =<span class="string">"123"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">   tmp = <span class="string">'abc'</span>; <span class="comment">//abc</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>####暂时性死区:</p>
 <p>只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
-<pre><code class="javascript">// 不报错
-var x = x;
-// 报错
-let x = x; // x is not defined
-</code></pre>
-<p>let不允许重复声明变量</p>
-<pre><code class="javascript">function () {
-  let a = 10;
-  var a = 1;// 报错
-}
-function () {
-  let a = 10;
-  let a = 1;// 报错
-}
-</code></pre>
-<p>块级作用域理解:<br>下面代码中外层代码块不受内层代码块影响</p>
-<pre><code class="javascript">function f1() {
-  let n = 5;
-  if (true) {
-    let n = 10;
-  }
-  console.log(n); // 5
-}
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不报错</span></div><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="keyword">let</span> x = x; <span class="comment">// x is not defined</span></div></pre></td></tr></table></figure>
+<p>let不允许重复声明变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;<span class="comment">// 报错</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;<span class="comment">// 报错</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>块级作用域理解:<br>下面代码中外层代码块不受内层代码块影响<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> n = <span class="number">5</span>;</div><div class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    <span class="keyword">let</span> n = <span class="number">10</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(n); <span class="comment">// 5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>##const命令</p>
 <p>基本用法:</p>
 <p>const声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
 <hr>
-<p>一旦常量被更改,将会报错</p>
-<pre><code class="javascript">const a = 1
-console.log(a) // 1
-a = 2 //TypeError: Assignment to constant variable.
-</code></pre>
-<p>声明const时必须有初始值,因为const不能被修改,所以当声明没有初始值的const会报错</p>
-<pre><code class="javascript">const index;
-// SyntaxError: Missing initializer in const declaration
-</code></pre>
-<p>同let一样,const也存在暂时性死区</p>
-<pre><code class="javascript">if (true) {
-  console.log(index); // ReferenceError
-  const index = 5;
-}
-</code></pre>
-<p>如果一个变量被声明过,const再来声明也会报错</p>
-<pre><code class="javascript">var name = &quot;temzl&quot;;
-let age = 22;
-// 以下两行都会报错
-const name = &quot;张三&quot;;
-const age = 18;
-</code></pre>
-<p>const的实际目的并不只是使该变量不可改动,实际意义在于const指向的该变量内存地址不可改动</p>
-<pre><code class="javascript">const foo = {};
-// 为 foo 添加一个属性，可以成功
-foo.prop = 123;
-foo.prop // 123
-// 将 foo 指向另一个对象，就会报错
-foo = {}; // TypeError: &quot;foo&quot; is read-only
-</code></pre>
+<p>一旦常量被更改,将会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span></div><div class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 1</span></div><div class="line">a = <span class="number">2</span> <span class="comment">//TypeError: Assignment to constant variable.</span></div></pre></td></tr></table></figure></p>
+<p>声明const时必须有初始值,因为const不能被修改,所以当声明没有初始值的const会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> index;</div><div class="line"><span class="comment">// SyntaxError: Missing initializer in const declaration</span></div></pre></td></tr></table></figure></p>
+<p>同let一样,const也存在暂时性死区<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(index); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">const</span> index = <span class="number">5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果一个变量被声明过,const再来声明也会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"temzl"</span>;</div><div class="line"><span class="keyword">let</span> age = <span class="number">22</span>;</div><div class="line"><span class="comment">// 以下两行都会报错</span></div><div class="line"><span class="keyword">const</span> name = <span class="string">"张三"</span>;</div><div class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</div></pre></td></tr></table></figure></p>
+<p>const的实际目的并不只是使该变量不可改动,实际意义在于const指向的该变量内存地址不可改动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line">foo.prop <span class="comment">// 123</span></div><div class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></div><div class="line">foo = &#123;&#125;; <span class="comment">// TypeError: "foo" is read-only</span></div></pre></td></tr></table></figure></p>
 <p>###申明变量的六种方式:</p>
 <p>1、var<br>2、function<br>3、let<br>4、const<br>5、import<br>6、class</p>
 <p>不要再说只有一个var了 ✧(≖ ◡ ≖✿)嘿嘿</p>
@@ -564,21 +473,13 @@ foo = {}; // TypeError: &quot;foo&quot; is read-only
 <p>有编码就会有解码，解码就是decodeURI()和decodeURIComponent()</p>
 <p>他们的用法很简单，在参数中带入要转码的文字就可实现目的</p>
 <hr>
-<pre><code class="javascript">    encodeURI(&quot;我是要编码的文字&quot;)
-    decodeURI(&quot;我是要解码的文字&quot;)
-    encodeURIComponent(&quot;我是要编码的文字&quot;)
-    decodeURIComponent(&quot;我是要解码的文字&quot;)
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">encodeURI</span>(<span class="string">"我是要编码的文字"</span>)</div><div class="line"><span class="built_in">decodeURI</span>(<span class="string">"我是要解码的文字"</span>)</div><div class="line"><span class="built_in">encodeURIComponent</span>(<span class="string">"我是要编码的文字"</span>)</div><div class="line"><span class="built_in">decodeURIComponent</span>(<span class="string">"我是要解码的文字"</span>)</div></pre></td></tr></table></figure>
 <p>而encodeURI()和encodeURIComponent()的区别其实并不大<br>主要区别在于：</p>
 <font color="blue"><br>encodeURI不编码字符有82个：!，#，$，&amp;，’，(，)，，+，,，-，.，/，:，;，=，?，@，<em>，~，0-9，a-z，A-Z<br>encodeURIComponent不编码字符有71个：!， ‘，(，)，，-，.，</em>，~，0-9，a-z，A-Z<br></font>
 
 <hr>
-<p>encodeURI主要用于直接赋值给地址栏时候：</p>
-<pre><code class="javascript">location.href=encodeURI(&quot;http://www.cnblogs.com/Tezml/&quot;);
-</code></pre>
-<p>而encodeURIComponent主要用于url的query参数:</p>
-<pre><code class="javascript">location.href=&quot;http://www.cnblogs.com/Tezml/test.php?a=&quot;+encodeURIComponent(&quot;我就是我&quot;);
-</code></pre>
+<p>encodeURI主要用于直接赋值给地址栏时候：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=<span class="built_in">encodeURI</span>(<span class="string">"http://www.cnblogs.com/Tezml/"</span>);</div></pre></td></tr></table></figure></p>
+<p>而encodeURIComponent主要用于url的query参数:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=<span class="string">"http://www.cnblogs.com/Tezml/test.php?a="</span>+<span class="built_in">encodeURIComponent</span>(<span class="string">"我就是我"</span>);</div></pre></td></tr></table></figure></p>
 <hr>
 <p>而escape，相比于上面那两个，就有所不同了</p>
 <p>escape()是编码，unescape()是解码；</p>
@@ -591,49 +492,7 @@ foo = {}; // TypeError: &quot;foo&quot; is read-only
 
 <hr>
 <p>##最后上一段关于编码解码的demo</p>
-<pre><code class="javascript">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
- &lt;head&gt;
-  &lt;title&gt;Tezml_编码解码测试&lt;/title&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;author&quot; content=&quot;Tezml&quot; /&gt;
-  &lt;meta name=&quot;copyright&quot; content=&quot;Tezml&quot; /&gt;
-  &lt;meta name=&quot;description&quot; content=&quot;Tezml&quot; /&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;wz1&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz2&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz3&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz4&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz5&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz6&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz7&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz8&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz9&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz10&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz11&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;wz12&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-var chinese=&quot;请叫我中文&quot;
-var english=&quot;place tall me englash&quot;
-var Monster=&quot;:#&amp;$/@&quot;
-$(&quot;#wz1&quot;).html(encodeURI(chinese))//编码 %E8%AF%B7%E5%8F%AB%E6%88%91%E4%B8%AD%E6%96%87
-$(&quot;#wz2&quot;).html(decodeURI(chinese))//解码 请叫我中文
-$(&quot;#wz3&quot;).html(encodeURI(english))//编码 place%20tall%20me%20englash
-$(&quot;#wz4&quot;).html(decodeURI(english))//解码 place tall me englash
-$(&quot;#wz5&quot;).html(encodeURIComponent(Monster))//编码 %3A%23%26%24%2F%40
-$(&quot;#wz6&quot;).html(encodeURI(Monster))//编码 :#&amp;$/@
-$(&quot;#wz7&quot;).html(escape(chinese))//编码 %u8BF7%u53EB%u6211%u4E2D%u6587
-$(&quot;#wz8&quot;).html(escape(english))//编码 place%20tall%20me%20englash
-$(&quot;#wz9&quot;).html(escape(Monster))//编码 %3A%23%26%24/@
-$(&quot;#wz10&quot;).html(unescape(chinese))//编码 请叫我中文
-$(&quot;#wz11&quot;).html(unescape(english))//编码 place tall me englash
-$(&quot;#wz12&quot;).html(unescape(Monster))//编码 :#&amp;$/@
-&lt;/script&gt;
-&lt;/html&gt;
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"> &lt;head&gt;</div><div class="line">  &lt;title&gt;Tezml_编码解码测试&lt;<span class="regexp">/title&gt;</span></div><div class="line"><span class="regexp">  &lt;meta charset="utf-8"&gt;</span></div><div class="line"><span class="regexp">  &lt;meta name="author" content="Tezml" /</span>&gt;</div><div class="line">  &lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"Tezml"</span> /&gt;</div><div class="line">  &lt;meta name=<span class="string">"description"</span> content=<span class="string">"Tezml"</span> /&gt;</div><div class="line">  &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;<span class="regexp">/head&gt;</span></div><div class="line"><span class="regexp">&lt;body&gt;</span></div><div class="line"><span class="regexp">&lt;div id="wz1"&gt;&lt;/</span>div&gt;</div><div class="line">&lt;div id=<span class="string">"wz2"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz3"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz4"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz5"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz6"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz7"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz8"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz9"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz10"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz11"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz12"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/body&gt;</span></div><div class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></div><div class="line"><span class="string">var chinese="</span>请叫我中文<span class="string">"</span></div><div class="line"><span class="string">var english="</span>place tall me englash<span class="string">"</span></div><div class="line">var Monster=":#&amp;$/@"</div><div class="line">$(<span class="string">"#wz1"</span>).html(<span class="built_in">encodeURI</span>(chinese))<span class="comment">//编码 %E8%AF%B7%E5%8F%AB%E6%88%91%E4%B8%AD%E6%96%87</span></div><div class="line">$(<span class="string">"#wz2"</span>).html(<span class="built_in">decodeURI</span>(chinese))<span class="comment">//解码 请叫我中文</span></div><div class="line">$(<span class="string">"#wz3"</span>).html(<span class="built_in">encodeURI</span>(english))<span class="comment">//编码 place%20tall%20me%20englash</span></div><div class="line">$(<span class="string">"#wz4"</span>).html(<span class="built_in">decodeURI</span>(english))<span class="comment">//解码 place tall me englash</span></div><div class="line">$(<span class="string">"#wz5"</span>).html(<span class="built_in">encodeURIComponent</span>(Monster))<span class="comment">//编码 %3A%23%26%24%2F%40</span></div><div class="line">$(<span class="string">"#wz6"</span>).html(<span class="built_in">encodeURI</span>(Monster))<span class="comment">//编码 :#&amp;$/@</span></div><div class="line">$(<span class="string">"#wz7"</span>).html(<span class="built_in">escape</span>(chinese))<span class="comment">//编码 %u8BF7%u53EB%u6211%u4E2D%u6587</span></div><div class="line">$(<span class="string">"#wz8"</span>).html(<span class="built_in">escape</span>(english))<span class="comment">//编码 place%20tall%20me%20englash</span></div><div class="line">$(<span class="string">"#wz9"</span>).html(<span class="built_in">escape</span>(Monster))<span class="comment">//编码 %3A%23%26%24/@</span></div><div class="line">$(<span class="string">"#wz10"</span>).html(<span class="built_in">unescape</span>(chinese))<span class="comment">//编码 请叫我中文</span></div><div class="line">$(<span class="string">"#wz11"</span>).html(<span class="built_in">unescape</span>(english))<span class="comment">//编码 place tall me englash</span></div><div class="line">$(<span class="string">"#wz12"</span>).html(<span class="built_in">unescape</span>(Monster))<span class="comment">//编码 :#&amp;$/@</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>html&gt;</div></pre></td></tr></table></figure>
 
           
         
