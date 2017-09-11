@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
+<meta name="description" content="let命令###基本用法 ###ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入ES6(一) let与const">
 <meta property="og:url" content="https://tezml.github.io/2016/11/12/深入ES6-一-let与const/index.html">
 <meta property="og:site_name" content="Tezml.Blog">
-<meta property="og:description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
+<meta property="og:description" content="let命令###基本用法 ###ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-11T11:17:42.000Z">
+<meta property="og:updated_time" content="2017-09-11T11:42:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入ES6(一) let与const">
-<meta name="twitter:description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
+<meta name="twitter:description" content="let命令###基本用法 ###ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined">
 
 
 
@@ -315,9 +315,9 @@
       
 
       
-        <p>##let命令</p>
-<p>###基本用法<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
+        <h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p>###基本用法 ###<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="keyword">var</span> a =<span class="number">1</span>;</div><div class="line">   <span class="keyword">let</span> b =<span class="number">2</span>;</div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">   <span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//b is not defined</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <hr>
 <p>用let做循环处理就会比较方便,不会使i作用于外面。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i);<span class="comment">//i is not defined</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(i)<span class="comment">//10</span></div></pre></td></tr></table></figure>
@@ -328,13 +328,12 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(bar)<span class="comment">//bar is not defined</span></div><div class="line"><span class="keyword">let</span> bar;</div><div class="line"><span class="built_in">console</span>.log(tar)<span class="comment">//undefined</span></div><div class="line"><span class="keyword">var</span> tar</div></pre></td></tr></table></figure>
 <p>只要有let的存在,那么这个变量只存在于该作用域内</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">   tmp = <span class="string">'abc'</span>; <span class="comment">// let&amp;const.html:64 Uncaught ReferenceError: tmp is not defined</span></div><div class="line">   <span class="keyword">let</span> tmp =<span class="string">"123"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">   tmp = <span class="string">'abc'</span>; <span class="comment">//abc</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>####暂时性死区:</p>
+<p>###暂时性死区: ###</p>
 <p>只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不报错</span></div><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="keyword">let</span> x = x; <span class="comment">// x is not defined</span></div></pre></td></tr></table></figure>
 <p>let不允许重复声明变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;<span class="comment">// 报错</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;<span class="comment">// 报错</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>块级作用域理解:<br>下面代码中外层代码块不受内层代码块影响<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> n = <span class="number">5</span>;</div><div class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">    <span class="keyword">let</span> n = <span class="number">10</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(n); <span class="comment">// 5</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>##const命令</p>
-<p>基本用法:</p>
+<h2 id="const命令"><a href="#const命令" class="headerlink" title="const命令"></a>const命令</h2><p>基本用法:</p>
 <p>const声明一个只读的常量。一旦声明，常量的值就不能改变。</p>
 <hr>
 <p>一旦常量被更改,将会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span></div><div class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 1</span></div><div class="line">a = <span class="number">2</span> <span class="comment">//TypeError: Assignment to constant variable.</span></div></pre></td></tr></table></figure></p>
@@ -342,9 +341,7 @@
 <p>同let一样,const也存在暂时性死区<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(index); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">const</span> index = <span class="number">5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果一个变量被声明过,const再来声明也会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"temzl"</span>;</div><div class="line"><span class="keyword">let</span> age = <span class="number">22</span>;</div><div class="line"><span class="comment">// 以下两行都会报错</span></div><div class="line"><span class="keyword">const</span> name = <span class="string">"张三"</span>;</div><div class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</div></pre></td></tr></table></figure></p>
 <p>const的实际目的并不只是使该变量不可改动,实际意义在于const指向的该变量内存地址不可改动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line">foo.prop <span class="comment">// 123</span></div><div class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></div><div class="line">foo = &#123;&#125;; <span class="comment">// TypeError: "foo" is read-only</span></div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>###申明变量的六种方式:</p>
-<p>1、var<br>2、function<br>3、let<br>4、const<br>5、import<br>6、class</p>
+<h3 id="申明变量的六种方式"><a href="#申明变量的六种方式" class="headerlink" title="申明变量的六种方式:"></a>申明变量的六种方式:</h3><p>1、var<br>2、function<br>3、let<br>4、const<br>5、import<br>6、class</p>
 <p>不要再说只有一个var了 ✧(≖ ◡ ≖✿)嘿嘿</p>
 <p>如果有时间后面会讲讲import和class</p>
 <p>本文部分文章引用阮一峰大神的文章,地址:<a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/let</a></p>
@@ -432,8 +429,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Tezml</p>
@@ -476,6 +482,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let命令"><span class="nav-number">1.</span> <span class="nav-text">let命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const命令"><span class="nav-number">2.</span> <span class="nav-text">const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#申明变量的六种方式"><span class="nav-number">2.1.</span> <span class="nav-text">申明变量的六种方式:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
