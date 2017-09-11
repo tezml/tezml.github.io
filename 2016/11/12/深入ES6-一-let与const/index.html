@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Tezml.Blog">
 <meta property="og:description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
 <meta property="og:locale" content="zn-CN">
-<meta property="og:updated_time" content="2017-09-11T10:57:30.000Z">
+<meta property="og:updated_time" content="2017-09-11T11:17:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入ES6(一) let与const">
 <meta name="twitter:description" content="##let命令 ###基本用法ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&amp;#123;   var a =1;   let b =2;   console.log(b);//2 &amp;#125;   console.log(a);//1   console.log(b);//b is not defined  用let">
@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -211,7 +211,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -275,7 +275,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-12T18:09:30+08:00">
                 2016-11-12
@@ -342,6 +342,7 @@
 <p>同let一样,const也存在暂时性死区<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(index); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">const</span> index = <span class="number">5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果一个变量被声明过,const再来声明也会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"temzl"</span>;</div><div class="line"><span class="keyword">let</span> age = <span class="number">22</span>;</div><div class="line"><span class="comment">// 以下两行都会报错</span></div><div class="line"><span class="keyword">const</span> name = <span class="string">"张三"</span>;</div><div class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</div></pre></td></tr></table></figure></p>
 <p>const的实际目的并不只是使该变量不可改动,实际意义在于const指向的该变量内存地址不可改动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line">foo.prop <span class="comment">// 123</span></div><div class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></div><div class="line">foo = &#123;&#125;; <span class="comment">// TypeError: "foo" is read-only</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>###申明变量的六种方式:</p>
 <p>1、var<br>2、function<br>3、let<br>4、const<br>5、import<br>6、class</p>
 <p>不要再说只有一个var了 ✧(≖ ◡ ≖✿)嘿嘿</p>
@@ -447,7 +448,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -502,7 +503,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 

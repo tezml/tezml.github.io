@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -274,7 +274,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-12T18:09:30+08:00">
                 2016-11-12
@@ -315,8 +315,7 @@
 
       
         
-          
-            <p>##let命令</p>
+          <p>##let命令</p>
 <p>###基本用法<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="keyword">var</span> a =<span class="number">1</span>;</div><div class="line">   <span class="keyword">let</span> b =<span class="number">2</span>;</div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">   <span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//b is not defined</span></div></pre></td></tr></table></figure>
 <hr>
@@ -343,13 +342,13 @@
 <p>同let一样,const也存在暂时性死区<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(index); <span class="comment">// ReferenceError</span></div><div class="line">  <span class="keyword">const</span> index = <span class="number">5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果一个变量被声明过,const再来声明也会报错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"temzl"</span>;</div><div class="line"><span class="keyword">let</span> age = <span class="number">22</span>;</div><div class="line"><span class="comment">// 以下两行都会报错</span></div><div class="line"><span class="keyword">const</span> name = <span class="string">"张三"</span>;</div><div class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</div></pre></td></tr></table></figure></p>
 <p>const的实际目的并不只是使该变量不可改动,实际意义在于const指向的该变量内存地址不可改动<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = &#123;&#125;;</div><div class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></div><div class="line">foo.prop = <span class="number">123</span>;</div><div class="line">foo.prop <span class="comment">// 123</span></div><div class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></div><div class="line">foo = &#123;&#125;; <span class="comment">// TypeError: "foo" is read-only</span></div></pre></td></tr></table></figure></p>
-<p>###申明变量的六种方式:</p>
-<p>1、var<br>2、function<br>3、let<br>4、const<br>5、import<br>6、class</p>
-<p>不要再说只有一个var了 ✧(≖ ◡ ≖✿)嘿嘿</p>
-<p>如果有时间后面会讲讲import和class</p>
-<p>本文部分文章引用阮一峰大神的文章,地址:<a href="http://es6.ruanyifeng.com/#docs/let" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/let</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/12/深入ES6-一-let与const/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -425,7 +424,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-12T18:00:05+08:00">
                 2015-07-12
@@ -466,35 +465,18 @@
 
       
         
-          
-            <p>首先，我们都知道这三个东西都是用来编码的</p>
+          <p>首先，我们都知道这三个东西都是用来编码的</p>
 <p>先来说encodeURI()和encodeURIComponent()</p>
 <p>这两个是在转换url时候用来编码解码用的。</p>
 <p>有编码就会有解码，解码就是decodeURI()和decodeURIComponent()</p>
 <p>他们的用法很简单，在参数中带入要转码的文字就可实现目的</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">encodeURI</span>(<span class="string">"我是要编码的文字"</span>)</div><div class="line"><span class="built_in">decodeURI</span>(<span class="string">"我是要解码的文字"</span>)</div><div class="line"><span class="built_in">encodeURIComponent</span>(<span class="string">"我是要编码的文字"</span>)</div><div class="line"><span class="built_in">decodeURIComponent</span>(<span class="string">"我是要解码的文字"</span>)</div></pre></td></tr></table></figure>
-<p>而encodeURI()和encodeURIComponent()的区别其实并不大<br>主要区别在于：</p>
-<font color="blue"><br>encodeURI不编码字符有82个：!，#，$，&amp;，’，(，)，，+，,，-，.，/，:，;，=，?，@，<em>，~，0-9，a-z，A-Z<br>encodeURIComponent不编码字符有71个：!， ‘，(，)，，-，.，</em>，~，0-9，a-z，A-Z<br></font>
-
-<hr>
-<p>encodeURI主要用于直接赋值给地址栏时候：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=<span class="built_in">encodeURI</span>(<span class="string">"http://www.cnblogs.com/Tezml/"</span>);</div></pre></td></tr></table></figure></p>
-<p>而encodeURIComponent主要用于url的query参数:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href=<span class="string">"http://www.cnblogs.com/Tezml/test.php?a="</span>+<span class="built_in">encodeURIComponent</span>(<span class="string">"我就是我"</span>);</div></pre></td></tr></table></figure></p>
-<hr>
-<p>而escape，相比于上面那两个，就有所不同了</p>
-<p>escape()是编码，unescape()是解码；</p>
-<p>escape 方法:</p>
-<p>对 String 对象编码以便它们能在所有计算机上可读，</p>
-<p>escape(charString)</p>
-<p>必选项 charstring 参数是要编码的任意 String 对象或文字。</p>
-<p>说明 :<br>escape 方法返回一个包含了 charstring 内容的字符串值（ Unicode 格式）。所有空格、标点、重音符号以及其他非 ASCII 字符都用 %xx 编码代替，<br>其中 xx 等于表示该字符的十六进制数。例如，空格返回的是 “%20” 。<br>字符值大于 255 的以 %uxxxx 格式存储。<br>escape不编码字符有69个：*，+，-，.，/，@，_，0-9，a-z，A-Z</p>
-<font color="blue">注意 escape 方法不能够用来对统一资源标示码 (URI) 进行编码。对其编码应使用 encodeURI 和encodeURIComponent 方法。</font>
-
-<hr>
-<p>##最后上一段关于编码解码的demo</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"> &lt;head&gt;</div><div class="line">  &lt;title&gt;Tezml_编码解码测试&lt;<span class="regexp">/title&gt;</span></div><div class="line"><span class="regexp">  &lt;meta charset="utf-8"&gt;</span></div><div class="line"><span class="regexp">  &lt;meta name="author" content="Tezml" /</span>&gt;</div><div class="line">  &lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"Tezml"</span> /&gt;</div><div class="line">  &lt;meta name=<span class="string">"description"</span> content=<span class="string">"Tezml"</span> /&gt;</div><div class="line">  &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;<span class="regexp">/head&gt;</span></div><div class="line"><span class="regexp">&lt;body&gt;</span></div><div class="line"><span class="regexp">&lt;div id="wz1"&gt;&lt;/</span>div&gt;</div><div class="line">&lt;div id=<span class="string">"wz2"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz3"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz4"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz5"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz6"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz7"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz8"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz9"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz10"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz11"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"wz12"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/body&gt;</span></div><div class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></div><div class="line"><span class="string">var chinese="</span>请叫我中文<span class="string">"</span></div><div class="line"><span class="string">var english="</span>place tall me englash<span class="string">"</span></div><div class="line">var Monster=":#&amp;$/@"</div><div class="line">$(<span class="string">"#wz1"</span>).html(<span class="built_in">encodeURI</span>(chinese))<span class="comment">//编码 %E8%AF%B7%E5%8F%AB%E6%88%91%E4%B8%AD%E6%96%87</span></div><div class="line">$(<span class="string">"#wz2"</span>).html(<span class="built_in">decodeURI</span>(chinese))<span class="comment">//解码 请叫我中文</span></div><div class="line">$(<span class="string">"#wz3"</span>).html(<span class="built_in">encodeURI</span>(english))<span class="comment">//编码 place%20tall%20me%20englash</span></div><div class="line">$(<span class="string">"#wz4"</span>).html(<span class="built_in">decodeURI</span>(english))<span class="comment">//解码 place tall me englash</span></div><div class="line">$(<span class="string">"#wz5"</span>).html(<span class="built_in">encodeURIComponent</span>(Monster))<span class="comment">//编码 %3A%23%26%24%2F%40</span></div><div class="line">$(<span class="string">"#wz6"</span>).html(<span class="built_in">encodeURI</span>(Monster))<span class="comment">//编码 :#&amp;$/@</span></div><div class="line">$(<span class="string">"#wz7"</span>).html(<span class="built_in">escape</span>(chinese))<span class="comment">//编码 %u8BF7%u53EB%u6211%u4E2D%u6587</span></div><div class="line">$(<span class="string">"#wz8"</span>).html(<span class="built_in">escape</span>(english))<span class="comment">//编码 place%20tall%20me%20englash</span></div><div class="line">$(<span class="string">"#wz9"</span>).html(<span class="built_in">escape</span>(Monster))<span class="comment">//编码 %3A%23%26%24/@</span></div><div class="line">$(<span class="string">"#wz10"</span>).html(<span class="built_in">unescape</span>(chinese))<span class="comment">//编码 请叫我中文</span></div><div class="line">$(<span class="string">"#wz11"</span>).html(<span class="built_in">unescape</span>(english))<span class="comment">//编码 place tall me englash</span></div><div class="line">$(<span class="string">"#wz12"</span>).html(<span class="built_in">unescape</span>(Monster))<span class="comment">//编码 :#&amp;$/@</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>html&gt;</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -570,7 +552,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-06-11T17:56:47+08:00">
                 2015-06-11
@@ -695,7 +677,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -750,7 +732,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 
