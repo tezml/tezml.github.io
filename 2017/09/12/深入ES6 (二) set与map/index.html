@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tezml.Blog</title>
+  <title>深入ES6 (二) set与map | Tezml.Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tezml.Blog">
-<meta property="og:url" content="https://tezml.github.io/index.html">
+  <meta name="description" content="SetSet,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。12const set = new Set([1,2,3]);console.log(typeof set)//object Set只接受数组。 12const set = new Set(&amp;#123;&quot;a&quot;:1&amp;#125;);console.log(set);//&quot;TypeError: [object">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入ES6 (二) set与map">
+<meta property="og:url" content="https://tezml.github.io/2017/09/12/深入ES6 (二) set与map/index.html">
 <meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="SetSet,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。12const set = new Set([1,2,3]);console.log(typeof set)//object Set只接受数组。 12const set = new Set(&amp;#123;&quot;a&quot;:1&amp;#125;);console.log(set);//&quot;TypeError: [object">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-12T12:08:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tezml.Blog">
+<meta name="twitter:title" content="深入ES6 (二) set与map">
+<meta name="twitter:description" content="SetSet,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。12const set = new Set([1,2,3]);console.log(typeof set)//object Set只接受数组。 12const set = new Set(&amp;#123;&quot;a&quot;:1&amp;#125;);console.log(set);//&quot;TypeError: [object">
   
     <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-深入ES6 (二) set与map" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-深入ES6 (二) set与map" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/12/深入ES6 (二) set与map/" class="article-date">
   <time datetime="2017-09-12T00:42:27.000Z" itemprop="datePublished">2017-09-12</time>
@@ -79,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/12/深入ES6 (二) set与map/">深入ES6 (二) set与map</a>
+    <h1 class="article-title" itemprop="name">
+      深入ES6 (二) set与map
     </h1>
   
 
@@ -160,134 +162,19 @@ clear()：清除所有成员，没有返回值。
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-深入ES6 (一) let与const" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/12/深入ES6 (一) let与const/" class="article-date">
-  <time datetime="2016-11-12T10:09:30.000Z" itemprop="datePublished">2016-11-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/12/深入ES6 (一) let与const/">深入ES6(一) let与const</a>
-    </h1>
+    <a href="/2016/11/12/深入ES6 (一) let与const/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深入ES6(一) let与const</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p>##基本用法 ##<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="keyword">var</span> a =<span class="number">1</span>;</div><div class="line">   <span class="keyword">let</span> b =<span class="number">2</span>;</div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">   <span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//b is not defined</span></div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/12/深入ES6 (一) let与const/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/11/12/深入ES6 (一) let与const/" data-id="cj7hjzxr800011p7g3cc55dl7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-细讲encodeURI和encodeURIComponent以及escape的区别与应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" class="article-date">
-  <time datetime="2015-07-12T10:00:05.000Z" itemprop="datePublished">2015-07-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/">细讲encodeURI和encodeURIComponent以及escape的区别与应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，我们都知道这三个东西都是用来编码的</p>
-<p>先来说encodeURI()和encodeURIComponent()</p>
-<p>这两个是在转换url时候用来编码解码用的。</p>
-<p>有编码就会有解码，解码就是decodeURI()和decodeURIComponent()</p>
-<p>他们的用法很简单，在参数中带入要转码的文字就可实现目的</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" data-id="cj7hjzxrc00031p7ghevf7ocf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-也算新的开始吧！" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/11/也算新的开始吧！/" class="article-date">
-  <time datetime="2015-06-11T09:56:47.000Z" itemprop="datePublished">2015-06-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/11/也算新的开始吧！/">“也算新的开始吧！&#34;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="换家啦"><a href="#换家啦" class="headerlink" title="换家啦!"></a>换家啦!</h2><p>因为换了手机号,之前博客园的密码都忘了也找不回来了,对于我而言,一天不写博客我简直浑身难受呢!(哈哈,开个玩笑)。<br>所以一直想找一个能写博客的地方,像传统博客这种我确实不太喜欢。而workpress这种我又很讨厌,之前自己用node加自己设计的页面做了一个博客系统,但是阿里云坑爹的服务器老被盗,我也表示日了狗了。用了俩月就放弃了,看看了github的hexo还不错,而且可以自定义一些皮肤,还可以绑定自己的域名。所以我就入坑啦O(∩_∩)O</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/06/11/也算新的开始吧！/" data-id="cj7hjzxra00021p7g64ok3ifx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
