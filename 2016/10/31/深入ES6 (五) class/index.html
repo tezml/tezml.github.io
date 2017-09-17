@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tezml.Blog</title>
+  <title>深入ES6 (五) class | Tezml.Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tezml.Blog">
-<meta property="og:url" content="https://tezml.github.io/index.html">
+  <meta name="description" content="##前言 ##今天来简单的聊一聊ES6中的class。我们都知道javascript这们语言能火起来,无非是ajax的兴起,而javascript中的面相对象,甚是让人难以理解,与传统语言的面向对象有很大差别,在ES6中,ECMAscript标准也看到了js中面向对象的不便,所以就有了今天的class。  正文从这里开始,ES6中的class从用法上可以理解是和传统语言的面向对象一样的思想,但是实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入ES6 (五) class">
+<meta property="og:url" content="https://tezml.github.io/2016/10/31/深入ES6 (五) class/index.html">
 <meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="##前言 ##今天来简单的聊一聊ES6中的class。我们都知道javascript这们语言能火起来,无非是ajax的兴起,而javascript中的面相对象,甚是让人难以理解,与传统语言的面向对象有很大差别,在ES6中,ECMAscript标准也看到了js中面向对象的不便,所以就有了今天的class。  正文从这里开始,ES6中的class从用法上可以理解是和传统语言的面向对象一样的思想,但是实">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-17T10:36:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tezml.Blog">
+<meta name="twitter:title" content="深入ES6 (五) class">
+<meta name="twitter:description" content="##前言 ##今天来简单的聊一聊ES6中的class。我们都知道javascript这们语言能火起来,无非是ajax的兴起,而javascript中的面相对象,甚是让人难以理解,与传统语言的面向对象有很大差别,在ES6中,ECMAscript标准也看到了js中面向对象的不便,所以就有了今天的class。  正文从这里开始,ES6中的class从用法上可以理解是和传统语言的面向对象一样的思想,但是实">
   
     <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-深入ES6 (五) class" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-深入ES6 (五) class" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/31/深入ES6 (五) class/" class="article-date">
   <time datetime="2016-10-31T15:54:24.000Z" itemprop="datePublished">2016-10-31</time>
@@ -79,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/深入ES6 (五) class/">深入ES6 (五) class</a>
+    <h1 class="article-title" itemprop="name">
+      深入ES6 (五) class
     </h1>
   
 
@@ -132,265 +134,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-深入ES6 (四) export与import" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/23/深入ES6 (四) export与import/" class="article-date">
-  <time datetime="2016-10-22T17:53:44.000Z" itemprop="datePublished">2016-10-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/23/深入ES6 (四) export与import/">深入ES6 (四) Module中的export与import</a>
-    </h1>
+    <a href="/2016/10/23/深入ES6 (四) export与import/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深入ES6 (四) Module中的export与import</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。</p>
-<p>今天来聊聊ES6中比较重要且使用的东西,也就是Module(模块),终于在ES6时,Javascript也具有模块化的功能,ES6中的Module具备着AMD和CMD的双重特性,也就是说,从ES6时代,我们可以告别SeaJs和requireJs了。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/23/深入ES6 (四) export与import/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/23/深入ES6 (四) export与import/" data-id="cj7olwxip0006zo7g5pynzbnn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-深入ES6 (三) for...of" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/13/深入ES6 (三) for...of/" class="article-date">
-  <time datetime="2016-10-13T00:58:47.000Z" itemprop="datePublished">2016-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/13/深入ES6 (三) for...of/">深入ES6 (三) for...of</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h2><p>在我学习for..of之前,我一会以为被吹捧的for…of有多么多么吊。。。在学习了之后,我感觉for…of相比较forEach、for来讲,不过尔尔。其实不过是像C++、Java、C# 和 Python 语言一样。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="Iterator-遍历器概念"><a href="#Iterator-遍历器概念" class="headerlink" title="Iterator(遍历器概念)"></a>Iterator(遍历器概念)</h4><p>在讲for…of之前,简单介绍一个概念:Iterator。</p>
-<p>Iterator的概念其实并不复杂,它其实像是一个javascript语法中的一个接口,或者说方法,如果想使用遍历功能,就需要调用Iterator遍历器功能。</p>
-<hr>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/13/深入ES6 (三) for...of/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/13/深入ES6 (三) for...of/" data-id="cj7olwxid0002zo7gwfdb4wjt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (二) set与map" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/18/深入ES6 (二) set与map/" class="article-date">
-  <time datetime="2016-09-18T00:42:27.000Z" itemprop="datePublished">2016-09-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/18/深入ES6 (二) set与map/">深入ES6 (二) set与map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> set)<span class="comment">//object</span></div></pre></td></tr></table></figure></p>
-<p>Set只接受数组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;);</div><div class="line"><span class="built_in">console</span>.log(set);<span class="comment">//"TypeError: [object Object] is not iterable!"</span></div></pre></td></tr></table></figure>
-<p>Set自带去重功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>]);</div><div class="line"><span class="built_in">console</span>.log([...set])<span class="comment">//[1,2,3,4]</span></div></pre></td></tr></table></figure></p>
-<p>Set的值的判断类似于”===”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">5</span>,<span class="string">"5"</span>]);</div><div class="line"><span class="built_in">console</span>.log([...set]);<span class="comment">//[5,"5"]</span></div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/18/深入ES6 (二) set与map/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cj7olwxik0004zo7g83gxa4p3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (一) let与const" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/12/深入ES6 (一) let与const/" class="article-date">
-  <time datetime="2016-09-12T10:09:30.000Z" itemprop="datePublished">2016-09-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/12/深入ES6 (一) let与const/">深入ES6(一) let与const</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p>##基本用法 ##<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="keyword">var</span> a =<span class="number">1</span>;</div><div class="line">   <span class="keyword">let</span> b =<span class="number">2</span>;</div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">   <span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//b is not defined</span></div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/12/深入ES6 (一) let与const/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/12/深入ES6 (一) let与const/" data-id="cj7olwxhi0000zo7guqs2d2l5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-细讲encodeURI和encodeURIComponent以及escape的区别与应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" class="article-date">
-  <time datetime="2015-07-12T10:00:05.000Z" itemprop="datePublished">2015-07-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/">细讲encodeURI和encodeURIComponent以及escape的区别与应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，我们都知道这三个东西都是用来编码的</p>
-<p>先来说encodeURI()和encodeURIComponent()</p>
-<p>这两个是在转换url时候用来编码解码用的。</p>
-<p>有编码就会有解码，解码就是decodeURI()和decodeURIComponent()</p>
-<p>他们的用法很简单，在参数中带入要转码的文字就可实现目的</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" data-id="cj7olwxin0005zo7gof4n1zm1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-也算新的开始吧！" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/11/也算新的开始吧！/" class="article-date">
-  <time datetime="2015-06-11T09:56:47.000Z" itemprop="datePublished">2015-06-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/11/也算新的开始吧！/">“也算新的开始吧！&#34;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="换家啦"><a href="#换家啦" class="headerlink" title="换家啦!"></a>换家啦!</h2><p>因为换了手机号,之前博客园的密码都忘了也找不回来了,对于我而言,一天不写博客我简直浑身难受呢!(哈哈,开个玩笑)。<br>所以一直想找一个能写博客的地方,像传统博客这种我确实不太喜欢。而workpress这种我又很讨厌,之前自己用node加自己设计的页面做了一个博客系统,但是阿里云坑爹的服务器老被盗,我也表示日了狗了。用了俩月就放弃了,看看了github的hexo还不错,而且可以自定义一些皮肤,还可以绑定自己的域名。所以我就入坑啦O(∩_∩)O</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/06/11/也算新的开始吧！/" data-id="cj7olwxia0001zo7g5nk0h219" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         

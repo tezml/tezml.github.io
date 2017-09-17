@@ -8,11 +8,11 @@
   <meta name="description" content="SetSet,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。12const set = new Set([1,2,3]);console.log(typeof set)//object Set只接受数组。 12const set = new Set(&amp;#123;&quot;a&quot;:1&amp;#125;);console.log(set);//&quot;TypeError: [object">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入ES6 (二) set与map">
-<meta property="og:url" content="https://tezml.github.io/2017/09/12/深入ES6 (二) set与map/index.html">
+<meta property="og:url" content="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/index.html">
 <meta property="og:site_name" content="Tezml.Blog">
 <meta property="og:description" content="SetSet,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。12const set = new Set([1,2,3]);console.log(typeof set)//object Set只接受数组。 12const set = new Set(&amp;#123;&quot;a&quot;:1&amp;#125;);console.log(set);//&quot;TypeError: [object">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-12T12:08:12.000Z">
+<meta property="og:updated_time" content="2017-09-13T01:04:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入ES6 (二) set与map">
 <meta name="twitter:description" content="SetSet,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。12const set = new Set([1,2,3]);console.log(typeof set)//object Set只接受数组。 12const set = new Set(&amp;#123;&quot;a&quot;:1&amp;#125;);console.log(set);//&quot;TypeError: [object">
@@ -70,8 +70,8 @@
       <div class="outer">
         <section id="main"><article id="post-深入ES6 (二) set与map" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/09/12/深入ES6 (二) set与map/" class="article-date">
-  <time datetime="2017-09-12T00:42:27.000Z" itemprop="datePublished">2017-09-12</time>
+    <a href="/2016/09/18/深入ES6 (二) set与map/" class="article-date">
+  <time datetime="2016-09-18T00:42:27.000Z" itemprop="datePublished">2016-09-18</time>
 </a>
     
   </div>
@@ -95,6 +95,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;);</div><div class="line"><span class="built_in">console</span>.log(set);<span class="comment">//"TypeError: [object Object] is not iterable!"</span></div></pre></td></tr></table></figure>
 <p>Set自带去重功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>]);</div><div class="line"><span class="built_in">console</span>.log([...set])<span class="comment">//[1,2,3,4]</span></div></pre></td></tr></table></figure></p>
 <p>Set的值的判断类似于”===”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">5</span>,<span class="string">"5"</span>]);</div><div class="line"><span class="built_in">console</span>.log([...set]);<span class="comment">//[5,"5"]</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>set用法:</p>
 <pre><code>add(value)：添加某个值，返回Set结构本身。
 
@@ -117,7 +118,6 @@ clear()：清除所有成员，没有返回值。
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</div><div class="line">  [<span class="string">'name'</span>, <span class="string">'张三'</span>],</div><div class="line">  [<span class="string">'title'</span>, <span class="string">'Author'</span>]</div><div class="line">]);</div><div class="line"></div><div class="line">map.size <span class="comment">// 2</span></div><div class="line">map.has(<span class="string">'name'</span>) <span class="comment">// true</span></div><div class="line">map.get(<span class="string">'name'</span>) <span class="comment">// "张三"</span></div><div class="line">map.has(<span class="string">'title'</span>) <span class="comment">// true</span></div><div class="line">map.get(<span class="string">'title'</span>) <span class="comment">// "Author"</span></div></pre></td></tr></table></figure>
 <p>之所以Map可以接受一个数组作为传参,实际上为内部执行了下面的算法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> items = [</div><div class="line">  [<span class="string">'name'</span>, <span class="string">'张三'</span>],</div><div class="line">  [<span class="string">'title'</span>, <span class="string">'Author'</span>]</div><div class="line">];</div><div class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">items.forEach(</div><div class="line">  ([key, value]) =&gt; map.set(key, value)</div><div class="line">);</div></pre></td></tr></table></figure>
-<p>所以就这样Map成为ES6最强大的遍历器。。。</p>
 <p>这还不算完,除此之外,我们还可以用Set生成Map。。。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([</div><div class="line">  [<span class="string">'foo'</span>, <span class="number">1</span>],</div><div class="line">  [<span class="string">'bar'</span>, <span class="number">2</span>]</div><div class="line">]);</div><div class="line"><span class="keyword">const</span> m1 = <span class="keyword">new</span> <span class="built_in">Map</span>(set);</div><div class="line">m1.get(<span class="string">'foo'</span>) <span class="comment">// 1</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> m2 = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'baz'</span>, <span class="number">3</span>]]);</div><div class="line"><span class="keyword">const</span> m3 = <span class="keyword">new</span> <span class="built_in">Map</span>(m2);</div><div class="line">m3.get(<span class="string">'baz'</span>) <span class="comment">// 3</span></div></pre></td></tr></table></figure>
 <p>如果对同一个键多次赋值，后面的值将覆盖前面的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"></div><div class="line">map.set(<span class="number">1</span>, <span class="string">'aaa'</span>).set(<span class="number">1</span>, <span class="string">'bbb'</span>);</div><div class="line"></div><div class="line">map.get(<span class="number">1</span>) <span class="comment">// "bbb"</span></div></pre></td></tr></table></figure></p>
@@ -151,12 +151,12 @@ clear()：清除所有成员，没有返回值。
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonToStrMap</span>(<span class="params">jsonStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> objToStrMap(<span class="built_in">JSON</span>.parse(jsonStr));</div><div class="line">&#125;</div><div class="line"></div><div class="line">jsonToStrMap(<span class="string">'&#123;"yes": true, "no": false&#125;'</span>)</div><div class="line"><span class="comment">// Map &#123;'yes' =&gt; true, 'no' =&gt; false&#125;</span></div></pre></td></tr></table></figure>
 <p>但是，有一种特殊情况，整个 JSON 就是一个数组，且每个数组成员本身，又是一个有两个成员的数组。这时，它可以一一对应地转为Map。这往往是数组转为 JSON 的逆操作。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonToMap</span>(<span class="params">jsonStr</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Map</span>(<span class="built_in">JSON</span>.parse(jsonStr));</div><div class="line">&#125;</div><div class="line"></div><div class="line">jsonToMap(<span class="string">'[[true,7],[&#123;"foo":3&#125;,["abc"]]]'</span>)</div><div class="line"><span class="comment">// Map &#123;true =&gt; 7, Object &#123;foo: 3&#125; =&gt; ['abc']&#125;</span></div></pre></td></tr></table></figure>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>Map实则也是一个构造函数,其优点在于处理非字符串(如Dom节点)的json遍历,其功能和方法都比forEach和for循环要强大些,总体来讲Map的功能还是蛮强大的</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>Map实则也是一个构造函数,其优点在于处理非字符串(如Dom节点)的json遍历,配合for…of后,其功能和方法都还算不错,总体来讲Map的功能还是蛮强大的。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/09/12/深入ES6 (二) set与map/" data-id="cj7hjzxr200001p7ggebzmbim" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cj7olwxik0004zo7g83gxa4p3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,8 +165,17 @@ clear()：清除所有成员，没有返回值。
     
 <nav id="article-nav">
   
+    <a href="/2016/10/13/深入ES6 (三) for...of/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          深入ES6 (三) for...of
+        
+      </div>
+    </a>
   
-    <a href="/2016/11/12/深入ES6 (一) let与const/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2016/09/12/深入ES6 (一) let与const/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">深入ES6(一) let与const</div>
     </a>
@@ -192,7 +201,7 @@ clear()：清除所有成员，没有返回值。
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
     </div>
   </div>
 
@@ -205,19 +214,23 @@ clear()：清除所有成员，没有返回值。
       <ul>
         
           <li>
-            <a href="/2017/09/12/深入ES6 (二) set与map/">深入ES6 (二) set与map</a>
+            <a href="/2016/10/31/深入ES6 (五) class/">深入ES6 (五) class</a>
           </li>
         
           <li>
-            <a href="/2016/11/12/深入ES6 (一) let与const/">深入ES6(一) let与const</a>
+            <a href="/2016/10/23/深入ES6 (四) export与import/">深入ES6 (四) Module中的export与import</a>
           </li>
         
           <li>
-            <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/">细讲encodeURI和encodeURIComponent以及escape的区别与应用</a>
+            <a href="/2016/10/13/深入ES6 (三) for...of/">深入ES6 (三) for...of</a>
           </li>
         
           <li>
-            <a href="/2015/06/11/也算新的开始吧！/">“也算新的开始吧！&#34;</a>
+            <a href="/2016/09/18/深入ES6 (二) set与map/">深入ES6 (二) set与map</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/12/深入ES6 (一) let与const/">深入ES6(一) let与const</a>
           </li>
         
       </ul>
