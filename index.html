@@ -66,6 +66,92 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-深入ES6 (七) Promise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/深入ES6 (七) Promise/" class="article-date">
+  <time datetime="2016-12-22T09:10:26.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/深入ES6 (七) Promise/">深入ES6 (七) Promise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>Promise是异步的一种解决方案,比传统的回调函数更加合理并且强大。</p>
+<p>ES6中,Promise是一个对象,这个对象中,有三个状态:1进行中(pending)、2已成功(fulfilled)、3已失败(rejected)。</p>
+<p>Promise可以算是一次性容器,Promise这个对象一旦改变状态,该容器即生命周期结束。<br>也就是说Promise只能发生一次状态改变,只有两种可能:<br>1、从进行中转为已成功<br>2、从进行中转为已失败</p>
+<p>正是因为这样的特性,导致这Promise有一些局限性,让Promise只能有短暂的生命周期,如果不改变状态,Promise会一直存在,消耗缓存。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/12/22/深入ES6 (七) Promise/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tezml.github.io/2016/12/22/深入ES6 (七) Promise/" data-id="cj7rkgv9a0002jl7gyoybx8w2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-深入ES6 (六) Proxy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/02/深入ES6 (六) Proxy/" class="article-date">
+  <time datetime="2016-11-02T08:03:24.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/02/深入ES6 (六) Proxy/">深入ES6 (六) Proxy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>Proxy在英文中的意思是代理的意思,而在ES6中的意义可不像是代理,而像是拦截:”intercept”。</p>
+<p>Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/02/深入ES6 (六) Proxy/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tezml.github.io/2016/11/02/深入ES6 (六) Proxy/" data-id="cj7rkgv9f0005jl7gluqe2wut" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-深入ES6 (五) class" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/31/深入ES6 (五) class/" class="article-date">
@@ -88,45 +174,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##前言 ##<br>今天来简单的聊一聊ES6中的class。我们都知道javascript这们语言能火起来,无非是ajax的兴起,而javascript中的面相对象,甚是让人难以理解,与传统语言的面向对象有很大差别,在ES6中,ECMAscript标准也看到了js中面向对象的不便,所以就有了今天的class。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天来简单的聊一聊ES6中的class。我们都知道javascript这们语言能火起来,无非是ajax的兴起,而javascript中的面相对象,甚是让人难以理解,与传统语言的面向对象有很大差别,在ES6中,ECMAscript标准也看到了js中面向对象的不便,所以就有了今天的class。</p>
 <hr>
 <p>正文从这里开始,ES6中的class从用法上可以理解是和传统语言的面向对象一样的思想,但是实际上class的面向对象思想还是javascript中的原型链思想,所以可以理解为ES6中的class就是一个语法糖,除了方便我们使用,大部分功能ES5都有。</p>
 <hr>
 <h3 id="class的用法"><a href="#class的用法" class="headerlink" title="class的用法"></a>class的用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y) &#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  tezmlName()&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"黄兆楠"</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面的例子就定义了一个类,<strong>constructor</strong>代表着test该类创建出来时候就执行的内容。也就是我们所谓的init。</p>
-<p>我们可以在类中写方法,如上。注意,在class中自定义方法不需要加function关键字,方法之间也不需要逗号分隔。</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">typeof</span> Point <span class="comment">// "function"</span></div><div class="line">Point === Point.prototype.constructor <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<p>上面这块代码验证了ES6中的class只是方便我们使用的一个语法糖,其class数据类型为函数,使用的时候也是直接new,与构造函数使用方式一样</p>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  toString() &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"></div><div class="line">Point.prototype = &#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;&#125;,</div><div class="line">  toString() &#123;&#125;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>class中的自定义方法实际就放在了函数的prototype中</p>
-<hr>
-<h2 id="类的实际对象"><a href="#类的实际对象" class="headerlink" title="类的实际对象"></a>类的实际对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="keyword">var</span> point = Point(<span class="number">2</span>, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="comment">// 正确</span></div><div class="line"><span class="keyword">var</span> point = <span class="keyword">new</span> Point(<span class="number">2</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure>
-<p>生成类的实例对象的写法，与 ES5 完全一样，也是使用new命令。前面说过，如果忘记加上new，像函数那样调用Class，将会报错。</p>
-<h2 id="class表达式"><a href="#class表达式" class="headerlink" title="class表达式"></a>class表达式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> MyClass = <span class="keyword">new</span> <span class="class"><span class="keyword">class</span> </span>&#123;</div><div class="line">  getName() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"tezml"</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(MyClass.tezml) <span class="comment">//tezml</span></div></pre></td></tr></table></figure>
-<p>像函数一样,class可以被定义,也可以给</p>
-<h2 id="class的继承"><a href="#class的继承" class="headerlink" title="class的继承"></a>class的继承</h2><p>Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</div><div class="line">    <span class="keyword">super</span>(x, y); <span class="comment">// 调用父类的constructor(x, y)</span></div><div class="line">    <span class="keyword">this</span>.color = color;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  toString() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString(); <span class="comment">// 调用父类的toString()</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面这块代码中有一个新的用法:super,super的意思表示父类的构造函数，用来新建父类的this对象。</p>
-<p>子类必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y) &#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</div><div class="line">    <span class="keyword">this</span>.color = color; <span class="comment">// ReferenceError</span></div><div class="line">    <span class="keyword">super</span>(x, y);</div><div class="line">    <span class="keyword">this</span>.color = color; <span class="comment">// 正确</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在子类的构造函数中,只有调用了super,才可以使用this,否则会报错。这是因为子类实例的构建，是基于对父类实例加工，只有super方法才能返回父类实例。</p>
-<h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><p>super这个关键字，既可以当作函数使用，也可以当作对象使用。在这两种情况下，它的用法完全不同。</p>
-<p>1、<strong>函数</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">super</span>();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>super作为函数调用时，代表父类的构造函数。(上文已提到)ES6 要求，子类的构造函数必须执行一次super函数。</p>
-<p>2、<strong>对象</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  p() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>() &#123;</div><div class="line">    <span class="keyword">super</span>();</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">super</span>.p()); <span class="comment">// 2</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> B();</div></pre></td></tr></table></figure></p>
-<p>super作为对象时，在普通方法中，指向父类的原型对象；在静态方法中，指向父类。</p>
-<p>上面代码中，子类B当中的super.p()，就是将super当作一个对象使用。这时，super在普通方法之中，指向A.prototype，所以super.p()就相当于A.prototype.p()。</p>
-<hr>
-<p>ES6 规定，通过super调用父类的方法时，super会绑定子类的this。</p>
-<h2 id="Class-实现-mixin"><a href="#Class-实现-mixin" class="headerlink" title="Class 实现 mixin"></a>Class 实现 mixin</h2><p>我第一次接触mixin这个名词时候以为是中文汉语拼音’迷信’✧(≖ ◡ ≖✿),后来熟悉了之后才知道是’mix in’,混入的意思,实际上也就实现了模块化的需求。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mix</span>(<span class="params">...mixins</span>) </span>&#123;</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Mix</span> </span>&#123;&#125;</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> mixin <span class="keyword">of</span> mixins) &#123;</div><div class="line">    copyProperties(Mix, mixin);</div><div class="line">    copyProperties(Mix.prototype, mixin.prototype);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> Mix;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyProperties</span>(<span class="params">target, source</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> <span class="built_in">Reflect</span>.ownKeys(source)) &#123;</div><div class="line">    <span class="keyword">if</span> ( key !== <span class="string">"constructor"</span></div><div class="line">      &amp;&amp; key !== <span class="string">"prototype"</span></div><div class="line">      &amp;&amp; key !== <span class="string">"name"</span></div><div class="line">    ) &#123;</div><div class="line">      <span class="keyword">let</span> desc = <span class="built_in">Object</span>.getOwnPropertyDescriptor(source, key);</div><div class="line">      <span class="built_in">Object</span>.defineProperty(target, key, desc);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/10/31/深入ES6 (五) class/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/31/深入ES6 (五) class/" data-id="cj7pfgrb20004757g28y6dfay" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/10/31/深入ES6 (五) class/" data-id="cj7rkgv9h0006jl7ge9idfs8v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/23/深入ES6 (四) export与import/" data-id="cj7pfgrb90006757g5w5wf4ss" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/10/23/深入ES6 (四) export与import/" data-id="cj7rkgv9z0008jl7gb621dmkg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/13/深入ES6 (三) for...of/" data-id="cj7pfgray0002757gyjyp8pje" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/10/13/深入ES6 (三) for...of/" data-id="cj7rkgv9c0003jl7gzvr6q8q4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cj7pfgrb00003757gsuhe8ts5" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cj7rkgv9c0004jl7g5xjvrcy6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/12/深入ES6 (一) let与const/" data-id="cj7pfgraw0001757gezx587lh" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/09/12/深入ES6 (一) let与const/" data-id="cj7rkgv980001jl7gsp50bss7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -344,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" data-id="cj7pfgrb60005757ginpn2mrl" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" data-id="cj7rkgv9u0007jl7gvdjfnovk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -381,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/06/11/也算新的开始吧！/" data-id="cj7pfgrae0000757gj2007htr" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2015/06/11/也算新的开始吧！/" data-id="cj7rkgv930000jl7gt1ucqm70" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +469,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
     </div>
   </div>
 
@@ -421,6 +482,14 @@
       <ul>
         
           <li>
+            <a href="/2016/12/22/深入ES6 (七) Promise/">深入ES6 (七) Promise</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/深入ES6 (六) Proxy/">深入ES6 (六) Proxy</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/31/深入ES6 (五) class/">深入ES6 (五) class</a>
           </li>
         
@@ -430,14 +499,6 @@
         
           <li>
             <a href="/2016/10/13/深入ES6 (三) for...of/">深入ES6 (三) for...of</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/18/深入ES6 (二) set与map/">深入ES6 (二) set与map</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/12/深入ES6 (一) let与const/">深入ES6(一) let与const</a>
           </li>
         
       </ul>
