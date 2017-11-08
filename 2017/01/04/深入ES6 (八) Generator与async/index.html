@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Tezml.Blog">
 <meta property="og:description" content="GeneratorGenerator函数算是一个状态机,或者说他是一个具有Iterator接口特性的函数。 1234567function* helloWorldGenerator() &amp;#123;  yield &apos;hello&apos;;  yield &apos;world&apos;;  return &apos;ending&apos;;&amp;#125;var hw = helloWorldGenerator(); Generator函数与普">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-25T09:54:29.000Z">
+<meta property="og:updated_time" content="2017-11-08T02:06:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入ES6 (八) Generator与async">
 <meta name="twitter:description" content="GeneratorGenerator函数算是一个状态机,或者说他是一个具有Iterator接口特性的函数。 1234567function* helloWorldGenerator() &amp;#123;  yield &apos;hello&apos;;  yield &apos;world&apos;;  return &apos;ending&apos;;&amp;#125;var hw = helloWorldGenerator(); Generator函数与普">
@@ -94,6 +94,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</div><div class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> hw = helloWorldGenerator();</div></pre></td></tr></table></figure>
 <p>Generator函数与普通函数之间的区别有两点:</p>
 <p>1:函数名前有个*<br><br>2:yield表达式</p>
+<a id="more"></a>
 <h2 id="yield表达式"><a href="#yield表达式" class="headerlink" title="yield表达式"></a>yield表达式</h2><p>yield表达式是产出的意思,配合下面这块代码更好的理解yield表达式。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: 'hello', done: false &#125;</span></div><div class="line"></div><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: 'world', done: false &#125;</span></div><div class="line"></div><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: 'ending', done: true &#125;</span></div><div class="line"></div><div class="line">hw.next()</div><div class="line"><span class="comment">// &#123; value: undefined, done: true &#125;</span></div></pre></td></tr></table></figure>
 <p>上面这块代码中,我们执行hw函数的next()方法,(实际是Iterator接口提供的next方法)使得该Generator输出yield定义的值</p>
@@ -129,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/01/04/深入ES6 (八) Generator与async/" data-id="cj9qej92300086d7g7ir1vpk1" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/01/04/深入ES6 (八) Generator与async/" data-id="cj9qeldz3000a767g145guj9v" class="article-share-link">Share</a>
       
       
     </footer>
