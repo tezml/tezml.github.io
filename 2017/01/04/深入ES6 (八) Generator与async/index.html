@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tezml.Blog</title>
+  <title>深入ES6 (八) Generator与async | Tezml.Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tezml.Blog">
-<meta property="og:url" content="https://tezml.github.io/index.html">
+  <meta name="description" content="GeneratorGenerator函数算是一个状态机,或者说他是一个具有Iterator接口特性的函数。 1234567function* helloWorldGenerator() &amp;#123;  yield &apos;hello&apos;;  yield &apos;world&apos;;  return &apos;ending&apos;;&amp;#125;var hw = helloWorldGenerator(); Generator函数与普">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入ES6 (八) Generator与async">
+<meta property="og:url" content="https://tezml.github.io/2017/01/04/深入ES6 (八) Generator与async/index.html">
 <meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="GeneratorGenerator函数算是一个状态机,或者说他是一个具有Iterator接口特性的函数。 1234567function* helloWorldGenerator() &amp;#123;  yield &apos;hello&apos;;  yield &apos;world&apos;;  return &apos;ending&apos;;&amp;#125;var hw = helloWorldGenerator(); Generator函数与普">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-25T09:54:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tezml.Blog">
+<meta name="twitter:title" content="深入ES6 (八) Generator与async">
+<meta name="twitter:description" content="GeneratorGenerator函数算是一个状态机,或者说他是一个具有Iterator接口特性的函数。 1234567function* helloWorldGenerator() &amp;#123;  yield &apos;hello&apos;;  yield &apos;world&apos;;  return &apos;ending&apos;;&amp;#125;var hw = helloWorldGenerator(); Generator函数与普">
   
     <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-深入ES6 (八) Generator与async" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-深入ES6 (八) Generator与async" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/04/深入ES6 (八) Generator与async/" class="article-date">
   <time datetime="2017-01-04T01:27:30.000Z" itemprop="datePublished">2017-01-04</time>
@@ -79,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/04/深入ES6 (八) Generator与async/">深入ES6 (八) Generator与async</a>
+    <h1 class="article-title" itemprop="name">
+      深入ES6 (八) Generator与async
     </h1>
   
 
@@ -133,419 +135,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-微信浏览器中title的赋值问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/02/微信浏览器中title的赋值问题/" class="article-date">
-  <time datetime="2017-01-02T02:24:42.000Z" itemprop="datePublished">2017-01-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/02/微信浏览器中title的赋值问题/">微信浏览器中title的赋值问题</a>
-    </h1>
+    <a href="/2017/01/02/微信浏览器中title的赋值问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信浏览器中title的赋值问题</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="微信浏览器中的title"><a href="#微信浏览器中的title" class="headerlink" title="微信浏览器中的title"></a>微信浏览器中的title</h2><p>在qq浏览器中,浏览器内核属于腾讯自己研发的X5浏览器内核(其实就是从chrome内核魔改了一下),而在微信浏览器中,在X5这个本来就是阉割版的内核中,又做了阉割。。。</p>
-<p>其中一个比较恶心的问题在于一个网页在微信浏览器中打开时,不管我们给页面设置多少次title,微信浏览器只会抓取一次页面对title的赋值。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.title = <span class="string">"我也是标题"</span></div></pre></td></tr></table></figure>
-<p>如上两段代码同时放在一个页面中,微信浏览器只会做一次赋值,事实上我们正常使用的话也就是显示<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">```javascript</div><div class="line">document.title = &quot;标题1&quot;</div><div class="line">console.log(document.title)//标题1</div></pre></td></tr></table></figure></p>
-<p>在开发中会给我们开发造成一种错觉,就是我写的<figure class="highlight plain"><figcaption><span>``` 没有生效。其实不是没有生效,而是微信浏览器内部并没有做title变化的监听,内部处理其实就是title赋过一次值后,不管是``` <title> ```  ``` document.title ``` ,从第二次再赋值title开始,微信浏览器就不监听title的变化书写到微信浏览器的顶部title。</title></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">而在我们实际业务中,遇到一种情况,就是title需要我们动态去获取,也就是必须通过``` document.title ```来动态获取,但是傻逼微信还有个很智障的问题在于当前加载的页面是有可能被缓存住的,而缓存住的页面title实际已经被标记为给title赋过值了,所以会导致js动态加载title会不展示导致微信浏览器中顶部title是空的。</div><div class="line"></div><div class="line"></div><div class="line">而这个问题其实我们可以通过iframe解决。</div><div class="line"></div><div class="line">```javascript</div><div class="line">    document.title = t;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        var i = document.createElement(&apos;iframe&apos;);</div><div class="line">        i.style.display = &apos;none&apos;;</div><div class="line">        i.src = &quot;http://img4.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK&quot;;</div><div class="line">        i.onload = function() &#123;</div><div class="line">            setTimeout(function()&#123;</div><div class="line">                i.remove();</div><div class="line">            &#125;, 0)</div><div class="line">        &#125;;</div><div class="line">        document.body.appendChild(i);</div><div class="line">    &#125;,160)</div></pre></td></tr></table></figure></p>
-<p>微信浏览器内核的逻辑是只要有新的页面就会重新给顶部title赋值一次,所以当然iframe也是个页面了,通过上面代码可以看到我们先设置title,然后建立一个iframe,给iframe一个url,加载完成就删掉它,这样就会触发微信浏览器内核的更新页面逻辑,从而重新给title赋值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.title = t;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">    i.style.display = <span class="string">'none'</span>;</div><div class="line">    i.src = <span class="string">""</span>;<span class="comment">//src不能为空</span></div><div class="line">    i.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            i.remove();</div><div class="line">        &#125;, <span class="number">0</span>)</div><div class="line">    &#125;;</div><div class="line">    <span class="built_in">document</span>.body.appendChild(i);</div><div class="line">&#125;,<span class="number">160</span>)</div></pre></td></tr></table></figure>
-<font color="red">其中,有一点必须要注意!</font>
-
-<p>一直以为只要加载一个iframe就好了,因为每次引入一个文件或者引入一个网页都是成本,都是流量,所以我试图不加载文件,而这样并不能触发微信浏览器的重新赋值逻辑,所以其内核逻辑看来很明显,必须是加载一个网页或者文件时才会重新赋值title,所以我们也不能节省这些流量,每次都需要加载一个url,当然了,可以是图片,也可以是网页。什么都可以,越小约好啦。</p>
-<h2 id="Title问题引发的H5开发问题"><a href="#Title问题引发的H5开发问题" class="headerlink" title="Title问题引发的H5开发问题"></a>Title问题引发的H5开发问题</h2><p>这样的内核逻辑导致的问题是,像H5网页中的单页面开发的框架和思想(react、vue、angular之类的前端框架)都无法更换浏览器title,因为它自始至终都没有离开XXX.html,始终都是一个页面,而如果想变化title的话,只能通过上文所述的iframe方法来解决问题,而每一次更换前端路由都需要多加载一个多余的url,不管这个url有多大,对于我们开发都是很恶心的。</p>
-<p>目前来讲这个问题完美解决的方法并没有,我提供几种可实施的方案优化:</p>
-<h4 id="1、iframe引入url随机化处理"><a href="#1、iframe引入url随机化处理" class="headerlink" title="1、iframe引入url随机化处理"></a>1、iframe引入url随机化处理</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">i.src = <span class="string">"http://img1.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK"</span>;</div><div class="line">i.src = <span class="string">"http://img2.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK"</span>;</div><div class="line">i.src = <span class="string">"http://img3.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK"</span>;</div></pre></td></tr></table></figure>
-<p>类似于这种随机处理,缓解访问压力,而url流量当然是尽可能的压到最小</p>
-<h4 id="2、放弃单页面开发框架"><a href="#2、放弃单页面开发框架" class="headerlink" title="2、放弃单页面开发框架"></a>2、放弃单页面开发框架</h4><p>像在微信浏览器中运行的H5页面一般多逻辑,多页面的我们都采用单页面开发来实现我们的需求。这样避免页面跳转,用户体验更好一些,但是如果页面变化而title不跟着变,又很难接受,所以忍痛割爱,直接放弃单页面开发模式,由后端提供路由或直接跳转html实现逻辑。</p>
-<h4 id="3、小程序代替H5"><a href="#3、小程序代替H5" class="headerlink" title="3、小程序代替H5"></a>3、小程序代替H5</h4><p>毫无疑问2017年的小程序绝对会是大众理论的话题,而且总体来讲,小程序的用户体验和底层框架以及组件都是比较符合当前开发的hybrid开发,底层webview和虚拟dom模式也比较容易让开发者接受,其语法糖虽需要简单研究一下,但也很简单,身边后端朋友写小程序前端也很顺畅。<br>所有用小程序代替H5绝对是一种从根本解决问题的方法。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例:"></a>实例:</h3><p>拿京东的公众号举例,京东主商城采用小程序开发,一些订单查询、活动、个人中心页面都处于页面跳转的方式开发的,毕竟这些也都是一些单独的菜单跳转。相对来讲,京东的公众号开发算是比较成熟的,当然我觉得这跟腾讯与京东密切的合作有关吧。</p>
-<p>本文结束</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/01/02/微信浏览器中title的赋值问题/" data-id="cj9qegjfm00025f7gw7yq3efy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-深入ES6 (七) Promise" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/22/深入ES6 (七) Promise/" class="article-date">
-  <time datetime="2016-12-22T09:10:26.000Z" itemprop="datePublished">2016-12-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/22/深入ES6 (七) Promise/">深入ES6 (七) Promise</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>Promise是异步的一种解决方案,比传统的回调函数更加合理并且强大。</p>
-<p>ES6中,Promise是一个对象,这个对象中,有三个状态:1进行中(pending)、2已成功(fulfilled)、3已失败(rejected)。</p>
-<p>Promise可以算是一次性容器,Promise这个对象一旦改变状态,该容器即生命周期结束。<br>也就是说Promise只能发生一次状态改变,只有两种可能:<br>1、从进行中转为已成功<br>2、从进行中转为已失败</p>
-<p>正是因为这样的特性,导致这Promise有一些局限性,让Promise只能有短暂的生命周期,如果不改变状态,Promise会一直存在,消耗缓存。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/12/22/深入ES6 (七) Promise/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/12/22/深入ES6 (七) Promise/" data-id="cj9qegjfq00045f7gmh49vnf1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (六) Proxy" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/02/深入ES6 (六) Proxy/" class="article-date">
-  <time datetime="2016-11-02T08:03:24.000Z" itemprop="datePublished">2016-11-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/02/深入ES6 (六) Proxy/">深入ES6 (六) Proxy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>Proxy在英文中的意思是代理的意思,而在ES6中的意义可不像是代理,而像是拦截:”intercept”。</p>
-<p>Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/11/02/深入ES6 (六) Proxy/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/11/02/深入ES6 (六) Proxy/" data-id="cj9qegjg500095f7g7140hr9e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (五) class" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/31/深入ES6 (五) class/" class="article-date">
-  <time datetime="2016-10-31T15:54:24.000Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/深入ES6 (五) class/">深入ES6 (五) class</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天来简单的聊一聊ES6中的class。我们都知道javascript这们语言能火起来,无非是ajax的兴起,而javascript中的面相对象,甚是让人难以理解,与传统语言的面向对象有很大差别,在ES6中,ECMAscript标准也看到了js中面向对象的不便,所以就有了今天的class。</p>
-<hr>
-<p>正文从这里开始,ES6中的class从用法上可以理解是和传统语言的面向对象一样的思想,但是实际上class的面向对象思想还是javascript中的原型链思想,所以可以理解为ES6中的class就是一个语法糖,除了方便我们使用,大部分功能ES5都有。</p>
-<hr>
-<h3 id="class的用法"><a href="#class的用法" class="headerlink" title="class的用法"></a>class的用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义类</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(x, y) &#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  tezmlName()&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"黄兆楠"</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/31/深入ES6 (五) class/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/31/深入ES6 (五) class/" data-id="cj9qegjfu00065f7gf281gpht" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (四) export与import" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/23/深入ES6 (四) export与import/" class="article-date">
-  <time datetime="2016-10-22T17:53:44.000Z" itemprop="datePublished">2016-10-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/23/深入ES6 (四) export与import/">深入ES6 (四) Module中的export与import</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。</p>
-<p>今天来聊聊ES6中比较重要且使用的东西,也就是Module(模块),终于在ES6时,Javascript也具有模块化的功能,ES6中的Module具备着AMD和CMD的双重特性,也就是说,从ES6时代,我们可以告别SeaJs和requireJs了。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/23/深入ES6 (四) export与import/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/23/深入ES6 (四) export与import/" data-id="cj9qegjga000b5f7gybjt6l38" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (三) for...of" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/13/深入ES6 (三) for...of/" class="article-date">
-  <time datetime="2016-10-13T00:58:47.000Z" itemprop="datePublished">2016-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/13/深入ES6 (三) for...of/">深入ES6 (三) for...of</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h2><p>在我学习for..of之前,我一会以为被吹捧的for…of有多么多么吊。。。在学习了之后,我感觉for…of相比较forEach、for来讲,不过尔尔。其实不过是像C++、Java、C# 和 Python 语言一样。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="Iterator-遍历器概念"><a href="#Iterator-遍历器概念" class="headerlink" title="Iterator(遍历器概念)"></a>Iterator(遍历器概念)</h4><p>在讲for…of之前,简单介绍一个概念:Iterator。</p>
-<p>Iterator的概念其实并不复杂,它其实像是一个javascript语法中的一个接口,或者说方法,如果想使用遍历功能,就需要调用Iterator遍历器功能。</p>
-<hr>
-        
-          <p class="article-more-link">
-            <a href="/2016/10/13/深入ES6 (三) for...of/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/13/深入ES6 (三) for...of/" data-id="cj9qegjfs00055f7gr9mbd11w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (二) set与map" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/18/深入ES6 (二) set与map/" class="article-date">
-  <time datetime="2016-09-18T00:42:27.000Z" itemprop="datePublished">2016-09-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/18/深入ES6 (二) set与map/">深入ES6 (二) set与map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set,是ES6提供的新的数据结构,它类似于数组，但是成员的值都是唯一的，没有重复的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> set)<span class="comment">//object</span></div></pre></td></tr></table></figure></p>
-<p>Set只接受数组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;);</div><div class="line"><span class="built_in">console</span>.log(set);<span class="comment">//"TypeError: [object Object] is not iterable!"</span></div></pre></td></tr></table></figure>
-<p>Set自带去重功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">4</span>]);</div><div class="line"><span class="built_in">console</span>.log([...set])<span class="comment">//[1,2,3,4]</span></div></pre></td></tr></table></figure></p>
-<p>Set的值的判断类似于”===”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">5</span>,<span class="string">"5"</span>]);</div><div class="line"><span class="built_in">console</span>.log([...set]);<span class="comment">//[5,"5"]</span></div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/18/深入ES6 (二) set与map/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cj9qegjfw00075f7gfp73bza3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-深入ES6 (一) let与const" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/12/深入ES6 (一) let与const/" class="article-date">
-  <time datetime="2016-09-12T10:09:30.000Z" itemprop="datePublished">2016-09-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/12/深入ES6 (一) let与const/">深入ES6(一) let与const</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="let命令"><a href="#let命令" class="headerlink" title="let命令"></a>let命令</h2><p>##基本用法 ##<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="keyword">var</span> a =<span class="number">1</span>;</div><div class="line">   <span class="keyword">let</span> b =<span class="number">2</span>;</div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">   <span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line">   <span class="built_in">console</span>.log(b);<span class="comment">//b is not defined</span></div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/12/深入ES6 (一) let与const/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/12/深入ES6 (一) let与const/" data-id="cj9qegjfp00035f7gcm8fvxr0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-细讲encodeURI和encodeURIComponent以及escape的区别与应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" class="article-date">
-  <time datetime="2015-07-12T10:00:05.000Z" itemprop="datePublished">2015-07-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/">细讲encodeURI和encodeURIComponent以及escape的区别与应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先，我们都知道这三个东西都是用来编码的</p>
-<p>先来说encodeURI()和encodeURIComponent()</p>
-<p>这两个是在转换url时候用来编码解码用的。</p>
-<p>有编码就会有解码，解码就是decodeURI()和decodeURIComponent()</p>
-<p>他们的用法很简单，在参数中带入要转码的文字就可实现目的</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2015/07/12/细讲encodeURI和encodeURIComponent以及escape的区别与应用/" data-id="cj9qegjg8000a5f7gk237j4fi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

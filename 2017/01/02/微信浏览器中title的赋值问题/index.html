@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>微信浏览器中title的赋值问题 | Tezml.Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="微信浏览器中的title在qq浏览器中,浏览器内核属于腾讯自己研发的X5浏览器内核(其实就是从chrome内核魔改了一下),而在微信浏览器中,在X5这个本来就是阉割版的内核中,又做了阉割。。。 其中一个比较恶心的问题在于一个网页在微信浏览器中打开时,不管我们给页面设置多少次title,微信浏览器只会抓取一次页面对title的赋值。 1&amp;lt;title&amp;gt;我是标题&amp;lt;/title&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信浏览器中title的赋值问题">
+<meta property="og:url" content="https://tezml.github.io/2017/01/02/微信浏览器中title的赋值问题/index.html">
+<meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="微信浏览器中的title在qq浏览器中,浏览器内核属于腾讯自己研发的X5浏览器内核(其实就是从chrome内核魔改了一下),而在微信浏览器中,在X5这个本来就是阉割版的内核中,又做了阉割。。。 其中一个比较恶心的问题在于一个网页在微信浏览器中打开时,不管我们给页面设置多少次title,微信浏览器只会抓取一次页面对title的赋值。 1&amp;lt;title&amp;gt;我是标题&amp;lt;/title&amp;gt;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-29T07:14:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信浏览器中title的赋值问题">
+<meta name="twitter:description" content="微信浏览器中的title在qq浏览器中,浏览器内核属于腾讯自己研发的X5浏览器内核(其实就是从chrome内核魔改了一下),而在微信浏览器中,在X5这个本来就是阉割版的内核中,又做了阉割。。。 其中一个比较恶心的问题在于一个网页在微信浏览器中打开时,不管我们给页面设置多少次title,微信浏览器只会抓取一次页面对title的赋值。 1&amp;lt;title&amp;gt;我是标题&amp;lt;/title&amp;gt;">
+  
+    <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner" style="top:100px">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tezml.Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鲜衣怒马少年时,且歌且行且从容。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tezml.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-微信浏览器中title的赋值问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/02/微信浏览器中title的赋值问题/" class="article-date">
+  <time datetime="2017-01-02T02:24:42.000Z" itemprop="datePublished">2017-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      微信浏览器中title的赋值问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="微信浏览器中的title"><a href="#微信浏览器中的title" class="headerlink" title="微信浏览器中的title"></a>微信浏览器中的title</h2><p>在qq浏览器中,浏览器内核属于腾讯自己研发的X5浏览器内核(其实就是从chrome内核魔改了一下),而在微信浏览器中,在X5这个本来就是阉割版的内核中,又做了阉割。。。</p>
+<p>其中一个比较恶心的问题在于一个网页在微信浏览器中打开时,不管我们给页面设置多少次title,微信浏览器只会抓取一次页面对title的赋值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.title = <span class="string">"我也是标题"</span></div></pre></td></tr></table></figure>
+<p>如上两段代码同时放在一个页面中,微信浏览器只会做一次赋值,事实上我们正常使用的话也就是显示<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">```javascript</div><div class="line">document.title = &quot;标题1&quot;</div><div class="line">console.log(document.title)//标题1</div></pre></td></tr></table></figure></p>
+<p>在开发中会给我们开发造成一种错觉,就是我写的<figure class="highlight plain"><figcaption><span>``` 没有生效。其实不是没有生效,而是微信浏览器内部并没有做title变化的监听,内部处理其实就是title赋过一次值后,不管是``` <title> ```  ``` document.title ``` ,从第二次再赋值title开始,微信浏览器就不监听title的变化书写到微信浏览器的顶部title。</title></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">而在我们实际业务中,遇到一种情况,就是title需要我们动态去获取,也就是必须通过``` document.title ```来动态获取,但是傻逼微信还有个很智障的问题在于当前加载的页面是有可能被缓存住的,而缓存住的页面title实际已经被标记为给title赋过值了,所以会导致js动态加载title会不展示导致微信浏览器中顶部title是空的。</div><div class="line"></div><div class="line"></div><div class="line">而这个问题其实我们可以通过iframe解决。</div><div class="line"></div><div class="line">```javascript</div><div class="line">    document.title = t;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        var i = document.createElement(&apos;iframe&apos;);</div><div class="line">        i.style.display = &apos;none&apos;;</div><div class="line">        i.src = &quot;http://img4.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK&quot;;</div><div class="line">        i.onload = function() &#123;</div><div class="line">            setTimeout(function()&#123;</div><div class="line">                i.remove();</div><div class="line">            &#125;, 0)</div><div class="line">        &#125;;</div><div class="line">        document.body.appendChild(i);</div><div class="line">    &#125;,160)</div></pre></td></tr></table></figure></p>
+<p>微信浏览器内核的逻辑是只要有新的页面就会重新给顶部title赋值一次,所以当然iframe也是个页面了,通过上面代码可以看到我们先设置title,然后建立一个iframe,给iframe一个url,加载完成就删掉它,这样就会触发微信浏览器内核的更新页面逻辑,从而重新给title赋值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.title = t;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">    i.style.display = <span class="string">'none'</span>;</div><div class="line">    i.src = <span class="string">""</span>;<span class="comment">//src不能为空</span></div><div class="line">    i.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            i.remove();</div><div class="line">        &#125;, <span class="number">0</span>)</div><div class="line">    &#125;;</div><div class="line">    <span class="built_in">document</span>.body.appendChild(i);</div><div class="line">&#125;,<span class="number">160</span>)</div></pre></td></tr></table></figure>
+<font color="red">其中,有一点必须要注意!</font>
+
+<p>一直以为只要加载一个iframe就好了,因为每次引入一个文件或者引入一个网页都是成本,都是流量,所以我试图不加载文件,而这样并不能触发微信浏览器的重新赋值逻辑,所以其内核逻辑看来很明显,必须是加载一个网页或者文件时才会重新赋值title,所以我们也不能节省这些流量,每次都需要加载一个url,当然了,可以是图片,也可以是网页。什么都可以,越小约好啦。</p>
+<h2 id="Title问题引发的H5开发问题"><a href="#Title问题引发的H5开发问题" class="headerlink" title="Title问题引发的H5开发问题"></a>Title问题引发的H5开发问题</h2><p>这样的内核逻辑导致的问题是,像H5网页中的单页面开发的框架和思想(react、vue、angular之类的前端框架)都无法更换浏览器title,因为它自始至终都没有离开XXX.html,始终都是一个页面,而如果想变化title的话,只能通过上文所述的iframe方法来解决问题,而每一次更换前端路由都需要多加载一个多余的url,不管这个url有多大,对于我们开发都是很恶心的。</p>
+<p>目前来讲这个问题完美解决的方法并没有,我提供几种可实施的方案优化:</p>
+<h4 id="1、iframe引入url随机化处理"><a href="#1、iframe引入url随机化处理" class="headerlink" title="1、iframe引入url随机化处理"></a>1、iframe引入url随机化处理</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">i.src = <span class="string">"http://img1.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK"</span>;</div><div class="line">i.src = <span class="string">"http://img2.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK"</span>;</div><div class="line">i.src = <span class="string">"http://img3.ffan.com/norm_120/T1eVCTBbdv1RCvBVdK"</span>;</div></pre></td></tr></table></figure>
+<p>类似于这种随机处理,缓解访问压力,而url流量当然是尽可能的压到最小</p>
+<h4 id="2、放弃单页面开发框架"><a href="#2、放弃单页面开发框架" class="headerlink" title="2、放弃单页面开发框架"></a>2、放弃单页面开发框架</h4><p>像在微信浏览器中运行的H5页面一般多逻辑,多页面的我们都采用单页面开发来实现我们的需求。这样避免页面跳转,用户体验更好一些,但是如果页面变化而title不跟着变,又很难接受,所以忍痛割爱,直接放弃单页面开发模式,由后端提供路由或直接跳转html实现逻辑。</p>
+<h4 id="3、小程序代替H5"><a href="#3、小程序代替H5" class="headerlink" title="3、小程序代替H5"></a>3、小程序代替H5</h4><p>毫无疑问2017年的小程序绝对会是大众理论的话题,而且总体来讲,小程序的用户体验和底层框架以及组件都是比较符合当前开发的hybrid开发,底层webview和虚拟dom模式也比较容易让开发者接受,其语法糖虽需要简单研究一下,但也很简单,身边后端朋友写小程序前端也很顺畅。<br>所有用小程序代替H5绝对是一种从根本解决问题的方法。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例:"></a>实例:</h3><p>拿京东的公众号举例,京东主商城采用小程序开发,一些订单查询、活动、个人中心页面都处于页面跳转的方式开发的,毕竟这些也都是一些单独的菜单跳转。相对来讲,京东的公众号开发算是比较成熟的,当然我觉得这跟腾讯与京东密切的合作有关吧。</p>
+<p>本文结束</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tezml.github.io/2017/01/02/微信浏览器中title的赋值问题/" data-id="cj9qegjfm00025f7gw7yq3efy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/04/深入ES6 (八) Generator与async/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          深入ES6 (八) Generator与async
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/22/深入ES6 (七) Promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深入ES6 (七) Promise</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/04/深入ES6 (八) Generator与async/">深入ES6 (八) Generator与async</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/02/微信浏览器中title的赋值问题/">微信浏览器中title的赋值问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/深入ES6 (七) Promise/">深入ES6 (七) Promise</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/深入ES6 (六) Proxy/">深入ES6 (六) Proxy</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/31/深入ES6 (五) class/">深入ES6 (五) class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tezml<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
