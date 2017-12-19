@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>谈谈js的继承 | Tezml.Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS的继承前一阵时间一个去面试的朋友问我js的继承一共有多少种?分别怎么实现的?我脑子一蒙,想了想说三四种吧,原型链、构造函数。。还有混合的怎么实现来着?于是乎我意识到了,我需要稳固一下基础知识了,哈哈。 1、原型链继承这种继承应该很容易理解,通过原型链的赋值,从而实现继承 1234567891011121314function animal(name) &amp;#123;    this.name =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈js的继承">
+<meta property="og:url" content="https://tezml.github.io/2017/07/19/谈谈js的继承/index.html">
+<meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="JS的继承前一阵时间一个去面试的朋友问我js的继承一共有多少种?分别怎么实现的?我脑子一蒙,想了想说三四种吧,原型链、构造函数。。还有混合的怎么实现来着?于是乎我意识到了,我需要稳固一下基础知识了,哈哈。 1、原型链继承这种继承应该很容易理解,通过原型链的赋值,从而实现继承 1234567891011121314function animal(name) &amp;#123;    this.name =">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-19T03:38:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈js的继承">
+<meta name="twitter:description" content="JS的继承前一阵时间一个去面试的朋友问我js的继承一共有多少种?分别怎么实现的?我脑子一蒙,想了想说三四种吧,原型链、构造函数。。还有混合的怎么实现来着?于是乎我意识到了,我需要稳固一下基础知识了,哈哈。 1、原型链继承这种继承应该很容易理解,通过原型链的赋值,从而实现继承 1234567891011121314function animal(name) &amp;#123;    this.name =">
+  
+    <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner" style="top:100px">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tezml.Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鲜衣怒马少年时,且歌且行且从容。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tezml.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-谈谈js的继承" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/19/谈谈js的继承/" class="article-date">
+  <time datetime="2017-07-19T03:08:45.000Z" itemprop="datePublished">2017-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      谈谈js的继承
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JS的继承"><a href="#JS的继承" class="headerlink" title="JS的继承"></a>JS的继承</h1><p>前一阵时间一个去面试的朋友问我js的继承一共有多少种?分别怎么实现的?我脑子一蒙,想了想说三四种吧,原型链、构造函数。。还有混合的怎么实现来着?于是乎我意识到了,我需要稳固一下基础知识了,哈哈。</p>
+<h2 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h2><p>这种继承应该很容易理解,通过原型链的赋值,从而实现继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">animal.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在吃：'</span> + food);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dog</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  </div><div class="line">&#125;</div><div class="line"></div><div class="line">dog.prototype = <span class="keyword">new</span> animal();</div></pre></td></tr></table></figure>
+<font color="blue">这种继承方式的特点是当父级发生改变时,子集随之也改变</font>
+
+
+
+<h2 id="2、构造函数继承"><a href="#2、构造函数继承" class="headerlink" title="2、构造函数继承"></a>2、构造函数继承</h2><p>构造函数继承其实就是在父类的构造函数中复制一份,给子类用(call、apply)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    animal.call(<span class="keyword">this</span>)</div><div class="line">    <span class="keyword">this</span>.name = name || <span class="string">"未知"</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<font color="blue">这种继承方式有一个比较致命的问题就是子类只可以继承父类的实例,而不能继承父类的prototype</font>
+
+
+<h2 id="3、实例继承"><a href="#3、实例继承" class="headerlink" title="3、实例继承"></a>3、实例继承</h2><p>这种方式的继承不多说了。。。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> instance = <span class="keyword">new</span> Animal();</div><div class="line">  instance.name = name || <span class="string">'Tom'</span>;</div><div class="line">  <span class="keyword">return</span> instance;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="4、混合继承"><a href="#4、混合继承" class="headerlink" title="4、混合继承"></a>4、混合继承</h2><p>这种方法的继承使我们所推荐的,其实就是构造函数继承加上原型链继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  Animal.call(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tezml.github.io/2017/07/19/谈谈js的继承/" data-id="cjbd308ln000cuj7gn6vribbh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/05/01/深入ES6 (九) 变量的结构/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/19/谈谈js的继承/">谈谈js的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/01/深入ES6 (九) 变量的结构/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/04/深入ES6 (八) Generator与async/">深入ES6 (八) Generator与async</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/22/深入ES6 (七) Promise/">深入ES6 (七) Promise</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/02/微信浏览器中title的赋值问题/">微信浏览器中title的赋值问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tezml<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
