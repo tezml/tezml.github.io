@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Tezml.Blog">
 <meta property="og:description" content="JS的继承前一阵时间一个去面试的朋友问我js的继承一共有多少种?分别怎么实现的?我脑子一蒙,想了想说三四种吧,原型链、构造函数。。还有混合的怎么实现来着?于是乎我意识到了,我需要稳固一下基础知识了,哈哈。 1、原型链继承这种继承应该很容易理解,通过原型链的赋值,从而实现继承 1234567891011121314function animal(name) &amp;#123;    this.name =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-19T03:38:43.000Z">
+<meta property="og:updated_time" content="2017-12-19T03:41:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈js的继承">
 <meta name="twitter:description" content="JS的继承前一阵时间一个去面试的朋友问我js的继承一共有多少种?分别怎么实现的?我脑子一蒙,想了想说三四种吧,原型链、构造函数。。还有混合的怎么实现来着?于是乎我意识到了,我需要稳固一下基础知识了,哈哈。 1、原型链继承这种继承应该很容易理解,通过原型链的赋值,从而实现继承 1234567891011121314function animal(name) &amp;#123;    this.name =">
@@ -95,8 +95,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">animal.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在吃：'</span> + food);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dog</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  </div><div class="line">&#125;</div><div class="line"></div><div class="line">dog.prototype = <span class="keyword">new</span> animal();</div></pre></td></tr></table></figure>
 <font color="blue">这种继承方式的特点是当父级发生改变时,子集随之也改变</font>
 
-
-
+<a id="more"></a>
 <h2 id="2、构造函数继承"><a href="#2、构造函数继承" class="headerlink" title="2、构造函数继承"></a>2、构造函数继承</h2><p>构造函数继承其实就是在父类的构造函数中复制一份,给子类用(call、apply)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    animal.call(<span class="keyword">this</span>)</div><div class="line">    <span class="keyword">this</span>.name = name || <span class="string">"未知"</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <font color="blue">这种继承方式有一个比较致命的问题就是子类只可以继承父类的实例,而不能继承父类的prototype</font>
 
@@ -108,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/07/19/谈谈js的继承/" data-id="cjbd308ln000cuj7gn6vribbh" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/07/19/谈谈js的继承/" data-id="cjbd320lc000cvg7g9ghka5wq" class="article-share-link">Share</a>
       
       
     </footer>

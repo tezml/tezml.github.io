@@ -92,21 +92,15 @@
 <h2 id="1、原型链继承"><a href="#1、原型链继承" class="headerlink" title="1、原型链继承"></a>1、原型链继承</h2><p>这种继承应该很容易理解,通过原型链的赋值,从而实现继承</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">animal.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">'正在吃：'</span> + food);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dog</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  </div><div class="line">&#125;</div><div class="line"></div><div class="line">dog.prototype = <span class="keyword">new</span> animal();</div></pre></td></tr></table></figure>
 <font color="blue">这种继承方式的特点是当父级发生改变时,子集随之也改变</font>
-
-
-
-<h2 id="2、构造函数继承"><a href="#2、构造函数继承" class="headerlink" title="2、构造函数继承"></a>2、构造函数继承</h2><p>构造函数继承其实就是在父类的构造函数中复制一份,给子类用(call、apply)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">    animal.call(<span class="keyword">this</span>)</div><div class="line">    <span class="keyword">this</span>.name = name || <span class="string">"未知"</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<font color="blue">这种继承方式有一个比较致命的问题就是子类只可以继承父类的实例,而不能继承父类的prototype</font>
-
-
-<h2 id="3、实例继承"><a href="#3、实例继承" class="headerlink" title="3、实例继承"></a>3、实例继承</h2><p>这种方式的继承不多说了。。。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> instance = <span class="keyword">new</span> Animal();</div><div class="line">  instance.name = name || <span class="string">'Tom'</span>;</div><div class="line">  <span class="keyword">return</span> instance;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="4、混合继承"><a href="#4、混合继承" class="headerlink" title="4、混合继承"></a>4、混合继承</h2><p>这种方法的继承使我们所推荐的,其实就是构造函数继承加上原型链继承</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.name = name || <span class="string">"未知"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  Animal.call(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2017/07/19/谈谈js的继承/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/07/19/谈谈js的继承/" data-id="cjbd308ln000cuj7gn6vribbh" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/07/19/谈谈js的继承/" data-id="cjbd320lc000cvg7g9ghka5wq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/05/01/深入ES6 (九) 变量的结构/" data-id="cjbd308ku0005uj7gd5eeycem" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/05/01/深入ES6 (九) 变量的结构/" data-id="cjbd320kv0005vg7grjtjj3lp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/03/04/深入ES6 (八) Generator与async/" data-id="cjbd308l30008uj7guotqz0h8" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/03/04/深入ES6 (八) Generator与async/" data-id="cjbd320l40008vg7gejbjtxb9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/01/22/深入ES6 (七) Promise/" data-id="cjbd308kc0002uj7gffh84vpw" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/01/22/深入ES6 (七) Promise/" data-id="cjbd320kn0001vg7g3r48j9vk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2017/01/02/微信浏览器中title的赋值问题/" data-id="cjbd308k30000uj7glx84ebpw" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2017/01/02/微信浏览器中title的赋值问题/" data-id="cjbd320kq0002vg7gsto5o15m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -317,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/11/02/深入ES6 (六) Proxy/" data-id="cjbd308l40009uj7gn6w8yqt7" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/11/02/深入ES6 (六) Proxy/" data-id="cjbd320l60009vg7g4w4e48ne" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/31/深入ES6 (五) class/" data-id="cjbd308kz0006uj7gziz40uou" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/10/31/深入ES6 (五) class/" data-id="cjbd320kt0004vg7gvlf0h68b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -404,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/23/深入ES6 (四) export与import/" data-id="cjbd308lj000auj7gak4wipe3" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/10/23/深入ES6 (四) export与import/" data-id="cjbd320l7000avg7g0grhzq9j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -448,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/10/13/深入ES6 (三) for...of/" data-id="cjbd308ks0004uj7g22hcy1rv" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/10/13/深入ES6 (三) for...of/" data-id="cjbd320ky0006vg7gsr2hm6vp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -493,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cjbd308l20007uj7gj6bjrxjs" class="article-share-link">Share</a>
+      <a data-url="https://tezml.github.io/2016/09/18/深入ES6 (二) set与map/" data-id="cjbd320kz0007vg7g6jgy9u5z" class="article-share-link">Share</a>
       
       
     </footer>
