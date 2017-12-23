@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>array与string的应用 | Tezml.Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言ES6出了一套新的数组和字符串的用法,为了巩固下基础,今天盘点下array和string的方法合集。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="array与string的应用">
+<meta property="og:url" content="https://tezml.github.io/2017/06/02/array与string的应用/index.html">
+<meta property="og:site_name" content="Tezml.Blog">
+<meta property="og:description" content="前言ES6出了一套新的数组和字符串的用法,为了巩固下基础,今天盘点下array和string的方法合集。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-23T18:54:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="array与string的应用">
+<meta name="twitter:description" content="前言ES6出了一套新的数组和字符串的用法,为了巩固下基础,今天盘点下array和string的方法合集。">
+  
+    <link rel="alternate" href="/atom.xml" title="Tezml.Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner" style="top:100px">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tezml.Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鲜衣怒马少年时,且歌且行且从容。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tezml.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-array与string的应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/02/array与string的应用/" class="article-date">
+  <time datetime="2017-06-02T11:07:27.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      array与string的应用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ES6出了一套新的数组和字符串的用法,为了巩固下基础,今天盘点下array和string的方法合集。</p>
+<a id="more"></a>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>先来讲string基本方法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"abcdfg"</span></div><div class="line"><span class="comment">//查询'b'字符在str所在的位置</span></div><div class="line">str.indexOf(<span class="string">"b"</span>)  <span class="comment">//1</span></div><div class="line"></div><div class="line"><span class="comment">//从最后一位查询"b"所在str的位置</span></div><div class="line">str.lastIndexOf(<span class="string">"b"</span>) <span class="comment">//4</span></div><div class="line"></div><div class="line"><span class="comment">//从str的第三位开始截取到第6位</span></div><div class="line">str.substring(<span class="number">2</span>,<span class="number">4</span>) <span class="comment">//"cd"</span></div><div class="line"></div><div class="line"><span class="comment">//从str的第三位开始截取到最后</span></div><div class="line">str.substring(<span class="number">2</span>) <span class="comment">//"cdefg"</span></div><div class="line"></div><div class="line"><span class="comment">//把str以","的方式转化成数组</span></div><div class="line">str.split(<span class="string">","</span>) <span class="comment">//[a,b,c,d,e,f,g]</span></div><div class="line"></div><div class="line"><span class="comment">//每两个字符以","方式转化为数组</span></div><div class="line">str.split(<span class="string">","</span>,<span class="number">2</span>) <span class="comment">//[ab,cd,ef,g]</span></div><div class="line"></div><div class="line"><span class="comment">//返回第三个字符所展示的值</span></div><div class="line">str.charAt(<span class="number">2</span>) <span class="comment">//c</span></div><div class="line"></div><div class="line">str.toLowerCase()<span class="comment">//转小写</span></div><div class="line">str.toUpperCase()<span class="comment">//转大写</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> str2 = <span class="string">"hijk"</span></div><div class="line">str.concat(str2) <span class="comment">//"abcdefghijk"</span></div></pre></td></tr></table></figure></p>
+<p>上述基本为日常开发中用到的string的方法,接下来讲讲在ES6中新加的一些比较实用的方式</p>
+<h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><p>includes其实和indexOf异曲同工,indexOf返回的是查询词的所在位置,而includes只是为了单纯的查询该字符是否在该字符串中,返回布尔值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"hello tezml"</span></div><div class="line"></div><div class="line">str.includes(<span class="string">'o'</span>) <span class="comment">//true</span></div><div class="line">str.includes(<span class="string">'c'</span>) <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>而includes其实还可以接受第二个参数,第二个参数代表从搜索位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"hello tezml"</span></div><div class="line"></div><div class="line">str.includes(<span class="string">'o'</span>,<span class="number">1</span>) <span class="comment">//true</span></div><div class="line">str.includes(<span class="string">'o'</span>,<span class="number">6</span>) <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h3 id="startsWith-和-endsWith"><a href="#startsWith-和-endsWith" class="headerlink" title="startsWith() 和 endsWith()"></a>startsWith() 和 endsWith()</h3><p>startsWith和endsWith可以查询字符是否在当前字符串的最前面和最后面,返回值也是布尔值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"hello tezml"</span></div><div class="line">str.startsWith(<span class="string">'hello'</span>) <span class="comment">//true</span></div><div class="line">str.startsWith(<span class="string">'h'</span>) <span class="comment">//true</span></div><div class="line">str.startsWith(<span class="string">'a'</span>) <span class="comment">//false</span></div><div class="line">str.endsWith(<span class="string">'tezml'</span>) <span class="comment">//true</span></div><div class="line">str.endsWith(<span class="string">'l'</span>) <span class="comment">//true</span></div><div class="line">str.endsWith(<span class="string">'hello'</span>) <span class="comment">//false</span></div></pre></td></tr></table></figure></p>
+<p>同样这两个方法也支持第二个参数,开始位置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"hello tezml"</span></div><div class="line">str.startsWith(<span class="string">'tezml'</span>, <span class="number">6</span>) <span class="comment">// true</span></div><div class="line">str.endsWith(<span class="string">'hello'</span>, <span class="number">5</span>) <span class="comment">// true</span></div><div class="line">str.includes(<span class="string">'hello'</span>, <span class="number">6</span>) <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h3><p>repeat其实就是对字符串拷贝多少次<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">'x'</span>.repeat(<span class="number">3</span>) <span class="comment">// "xxx"</span></div><div class="line"><span class="string">'hello'</span>.repeat(<span class="number">2</span>) <span class="comment">// "hellohello"</span></div><div class="line"><span class="string">'na'</span>.repeat(<span class="number">0</span>) <span class="comment">// ""</span></div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="array"><a href="#array" class="headerlink" title="array"></a>array</h2><p>接下来说说数组,和字符串一样,先写写传统的各种用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</div><div class="line"><span class="comment">//从最后给arr添加一个5</span></div><div class="line">arr.push(<span class="number">5</span>) <span class="comment">//[1,2,3,4,5]</span></div><div class="line"></div><div class="line"><span class="comment">//从首位给arr添加一个0</span></div><div class="line">arr.unshift(<span class="number">0</span>) <span class="comment">//[0,1,2,3,4]</span></div><div class="line"></div><div class="line"><span class="comment">//从首位删除删除一个</span></div><div class="line">arr.shift() <span class="comment">//[2,3,4]</span></div><div class="line"></div><div class="line"><span class="comment">//从最后一位删除一个</span></div><div class="line">arr.pop() <span class="comment">//[1,2,3]</span></div><div class="line"></div><div class="line"><span class="comment">//把数组以'.'分隔成字符串</span></div><div class="line">arr.join(<span class="string">'.'</span>) <span class="comment">//1.2.3.4</span></div><div class="line"></div><div class="line"><span class="comment">//从数组的第二位开始删除2个</span></div><div class="line">arr.splice(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">//[1,4]</span></div><div class="line"></div><div class="line"><span class="comment">//从数组的第二位开始删除2个,加上5,6,7</span></div><div class="line">arr.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>) <span class="comment">//[1,4,5,6,7]</span></div><div class="line"></div><div class="line"><span class="comment">//arr拼接arr2</span></div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</div><div class="line">arr.concat(arr2) <span class="comment">//[1,2,3,4,5,6,7]</span></div><div class="line"></div><div class="line"><span class="comment">//反转数组</span></div><div class="line">arr.reverse() <span class="comment">//[4,3,2,1]</span></div><div class="line"></div><div class="line"><span class="comment">//数组排序</span></div><div class="line">arr.sort() <span class="comment">//[1,2,3,4]</span></div><div class="line"></div><div class="line"><span class="comment">//把数组转换成字符串,以','分隔</span></div><div class="line">arr.toString() <span class="comment">//"1,2,3,4"</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tezml.github.io/2017/06/02/array与string的应用/" data-id="cjbjq20tl0000v87gtu1br9o9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/19/谈谈js的继承/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          谈谈js的继承
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/01/深入ES6 (九) 变量的结构/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/19/谈谈js的继承/">谈谈js的继承</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/02/array与string的应用/">array与string的应用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/01/深入ES6 (九) 变量的结构/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/04/深入ES6 (八) Generator与async/">深入ES6 (八) Generator与async</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/22/深入ES6 (七) Promise/">深入ES6 (七) Promise</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tezml<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
